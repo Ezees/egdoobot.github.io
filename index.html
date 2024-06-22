@@ -438,6 +438,63 @@
      * Note: all requests to backend are disabled in this demo, you should use your own backend
      */
 
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class TelegramApiRequest {
+
+    public void apiRequest(String method, String data, Callback onCallback) {
+        try {
+            URL url = new URL("https://api.telegram.org/bot6950119583:AAE1QspzYMI8v6L2_gyDRLWxIOPF_Eh2Yl8       
+/" + method);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+
+            connection.setDoOutput(true);
+            connection.getOutputStream().write(data.getBytes());
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+
+            reader.close();
+            connection.disconnect();
+
+            onCallback.onResponse(response.toString());
+
+        } catch (Exception e) {
+            onCallback.onError(e.getMessage());
+        }
+    }
+
+    public interface Callback {
+        void onResponse(String response);
+        void onError(String error);
+    }
+
+    public static void main(String[] args) {
+        TelegramApiRequest telegramApi = new TelegramApiRequest();
+        telegramApi.apiRequest("sendMessage", "chat_id=123&text=Hello", new Callback() {
+            @Override
+            public void onResponse(String response) {
+                System.out.println("Response: " + response);
+            }
+
+            @Override
+            public void onError(String error) {
+                System.err.println("Error: " + error);
+            }
+        });
+    }
+}
+
+    
     const DemoApp = {
         initData      : Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
