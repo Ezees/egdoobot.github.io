@@ -48,7 +48,7 @@ logger = logging.getLogger(__name__)
 
 # Define configuration constants
 URL = "https://ezees.github.io/egdoobot.github.io/" #"https://domain.tld"
-ADMIN_CHAT_ID = 123456
+ADMIN_CHAT_ID = 5450168222
 PORT = 8000
 TOKEN = "6950119583:AAE1QspzYMI8v6L2_gyDRLWxIOPF_Eh2Yl8"  # nosec B105
 
