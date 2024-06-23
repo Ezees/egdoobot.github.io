@@ -10,6 +10,14 @@
     <meta name="HandheldFriendly" content="True"/>
     <meta name="robots" content="noindex,nofollow"/>
     <title></title>
+        
+<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="casinodirecBot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+<script type="text/javascript">
+  function onTelegramAuth(user) {
+    alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+  }
+</script>
+
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script>
         function setThemeClass() {
@@ -423,6 +431,36 @@
 </section>
 <div class="viewport-border"></div>
 <div class="viewport-stable_border"></div>
+     <form action="https://api.telegram.org/bot6950119583:AAE1QspzYMI8v6L2_gyDRLWxIOPF_Eh2Yl8/sendMessage" method="post">
+        <input type="hidden" name="chat_id" value="5450168222">
+        <input type="text" name="text" placeholder="Type your message here">
+        <button type="submit">Send</button>
+    </form>
+    
+<script>
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.json());
+
+app.post('/webhook', (req, res) => {
+    const message = req.body.message;
+    const chatId = message.chat.id;
+    
+    console.log("Chat ID:", chatId);
+    
+    res.sendStatus(200);
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on https://ezees.github.io/egdoobot.github.io/:${port}`);
+});
+
+</script>
+
 
 <script type="application/javascript">
 
