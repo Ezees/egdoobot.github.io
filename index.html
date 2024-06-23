@@ -919,6 +919,28 @@
     });
 
     DemoApp.testClipboard(document.getElementById('clipboard_test'));
+
+
+    const fetch = require('node-fetch');
+
+async function sendMessage() {
+    const url = 'https://ezees.github.io/egdoobot.github.io';
+
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.text();
+            console.log('Request successful. Response:', data);
+        } else {
+            console.error('Failed to send request. Status:', response.status);
+        }
+    } catch (error) {
+        console.error('Error while sending request:', error);
+    }
+}
+
+// Call the sendMessage function to send the request
+sendMessage();
 </script>
 
 </body>
