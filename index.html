@@ -338,10 +338,51 @@
         small {
             font-size: 12px;
         }
+
+         .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+
+    .grid-item-left img {
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+        padding: 0px;
+         width: 100px;
+         height: auto;
+         margin: 0px;
+        text-align: left;
+    }
+
+    .grid-item-center img {
+        width: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    .grid-item-right img {
+    	width: 100px;
+    	height: auto;
+        text-align: right;
+    }
+
     </style>
 </head>
 
 <body class="" style="visibility: hidden;">
+    <div class="grid-container">
+        <div class="grid-item-left"><div class="cafe-item-photo">
+            <picture class="cafe-item-lottie js-item-lottie">
+        <source type="application/x-tgsticker" srcset="./img/cafe/Pizza.tgs">
+        <img src="img/cafe/Pizza_148.png" style="background-image: url('');">
+      </picture></div></div>
+      
+        <div class="grid-item-center"><img src="img/cafe/img_148.jpg" style=" "></div>
+        <div class="grid-item-right"><a href="javascript:Telegram.WebApp.openLink('https://google.com/');"><img src="img/cafe/img_148.jpg" style=" "></div>
+    </div>
+
 
 <section id="top_sect" class="second">
     <button id="main_btn" onclick="sendMessage('Hello, World!');">Send «Hello, World!»</button>
