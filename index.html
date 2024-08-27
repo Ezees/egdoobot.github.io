@@ -563,7 +563,33 @@
                 });
         }
    
-
+ const eze = {
+            showAlert: function(message) {
+                alert(message);
+            },
+            showConfirm: function(message) {
+                const isConfirmed = confirm(message);
+                console.log('User confirmed:', isConfirmed);
+            },
+            requestWriteAccess: function() {
+                // Simulate requesting write access
+                alert('Write access requested!');
+            },
+            requestContact: function() {
+                // Simulate requesting contact information
+                alert('Contact information requested!');
+            },
+            showPopup: function() {
+                alert('This is a popup message!');
+            },
+            showScanQrPopup: function(linksOnly = false) {
+                if (linksOnly) {
+                    alert('Scanning QR codes for links only...');
+                } else {
+                    alert('Scanning QR codes...');
+                }
+            }
+        };
     /*
      * This is a demo code for Telegram WebApp for Bots
      * It contains basic examples of how to use the API
@@ -848,6 +874,66 @@
         },
 
         // Permissions
+const eze = {
+        requestLocation: function(link) {
+            navigator.geolocation.getCurrentPosition(position => {
+                link.nextSibling.textContent = `Location: ${position.coords.latitude}, ${position.coords.longitude}`;
+            }, () => {
+                link.nextSibling.textContent = 'Location permission denied.';
+            });
+            return false;
+        },
+        
+        requestVideo: function(link) {
+            // Placeholder for video permission request
+            link.nextSibling.textContent = 'Video request initiated.';
+            return false;
+        },
+        
+        requestAudio: function(link) {
+            // Placeholder for audio permission request
+            link.nextSibling.textContent = 'Audio request initiated.';
+            return false;
+        },
+        
+        requestAudioVideo: function(link) {
+            // Placeholder for audio and video request
+            link.nextSibling.textContent = 'Audio and Video request initiated.';
+            return false;
+        },
+        
+        testClipboard: async function(link) {
+            try {
+                const text = await navigator.clipboard.readText();
+                link.nextSibling.textContent = `Clipboard content: ${text}`;
+            } catch (err) {
+                link.nextSibling.textContent = 'Failed to read clipboard. Access denied?';
+            }
+            return false;
+        },
+
+        requestWriteAccess: function(link) {
+            // Placeholder for write access request
+            link.nextSibling.textContent = 'Write access request initiated.';
+            return false;
+        },
+
+        requestPhoneNumber: function(link) {
+            // Placeholder for phone number request
+            link.nextSibling.textContent = 'Phone number request initiated.';
+            return false;
+        },
+        
+        requestServerTime: function(link) {
+            // Example of a custom method to fetch server time
+            const serverTime = new Date().toLocaleTimeString(); // Replace with actual server call
+            link.nextSibling.textContent = `Server time: ${serverTime}`;
+            return false;
+        },
+    };
+
+
+	    
         requestLocation(el) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
