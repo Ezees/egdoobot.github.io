@@ -44,6 +44,18 @@
             padding: 10px 17px;
         }
 
+
+     .button {
+            padding: 10px 20px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #005f99;
+        }
         .btn-primary {
             background-color: var(--tg-theme-button-color, #50a8eb);
             color: var(--tg-theme-button-text-color, #fff);
@@ -364,14 +376,14 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
-    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
-    <button onclick="DemoApp.expand();">Expand Webview</button>
-    <button onclick="DemoApp.toggleBackButton(this);">Show Back Button</button>
-    <button onclick="DemoApp.toggleSettingsButton(this);">Show Settings Button</button>
-    <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
-    <button onclick="DemoApp.toggleSwipeBehavior(this);">Disable Vertical Swypes</button>
+    <button id="main_btn" onclick="eze.sendMessage('');">Send «Hello, World!»</button>
+    <button id="with_webview_btn" onclick="eze.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
+    <button id="data_btn" onclick="eze.sendTime(true);">Send current time to bot (x10)</button>
+    <button onclick="eze.expand();">Expand Webview</button>
+    <button onclick="eze.toggleBackButton(this);">Show Back Button</button>
+    <button onclick="eze.toggleSettingsButton(this);">Show Settings Button</button>
+    <button onclick="eze.toggleMainButton(this);">Hide Main Button</button>
+    <button onclick="eze.toggleSwipeBehavior(this);">Disable Vertical Swypes</button>
     <input type="text" placeholder="Input text in regular input..." id="regular_field" />
     <div
         class="input"
@@ -407,7 +419,7 @@
         <li><a id="regular_link" href="?nextpage=1">Regular link #1</a> (opens inside webview)</li>
         <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
         <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
-        <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li>
+        <li><a href="https://t.me/casinodirecBot/eze">t.me/casinodirecBot</a> (opens inside Telegram app)</li>
         <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
         <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
         <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
@@ -425,16 +437,16 @@
     <p>Test permissions:</p>
     <div class="columns">
         <ul>
-            <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.requestAudio(this);">Request Audio</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestLocation(this);">Request Location</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestVideo(this);">Request Video</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestAudio(this);">Request Audio</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
         </ul>
         <ul>
-            <li><a href="javascript:;" onclick="return DemoApp.requestWriteAccess(this);">Request write access</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.requestPhoneNumber(this);">Request phone number</a> <span></span><br><br></li>
-            <li><a href="javascript:;" onclick="return DemoApp.requestServerTime(this);">Request server time</a> (invokes custom method) <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestWriteAccess(this);">Request write access</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.requestPhoneNumber(this);">Request phone number</a> <span></span><br><br></li>
+            <li><a href="javascript:;" onclick="return eze.requestServerTime(this);">Request server time</a> (invokes custom method) <span></span></li>
         </ul>
     </div>
 
@@ -446,13 +458,13 @@
             <li><a href="javascript:;" onclick="prompt('How old are you?');">prompt</a></li>
         </ul>
         <ul>
-            <li><a href="javascript:;" onclick="DemoApp.showAlert('Hello!');">showAlert</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.showConfirm('Are you sure?');">showConfirm</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.requestWriteAccess();">requestWriteAccess</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.requestContact();">requestContact</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.showPopup();">showPopup</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.showScanQrPopup();">showScanQrPopup</a></li>
-            <li><a href="javascript:;" onclick="DemoApp.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
+            <li><a href="javascript:;" onclick="eze.showAlert('Hello!');">showAlert</a></li>
+            <li><a href="javascript:;" onclick="eze.showConfirm('Are you sure?');">showConfirm</a></li>
+            <li><a href="javascript:;" onclick="eze.requestWriteAccess();">requestWriteAccess</a></li>
+            <li><a href="javascript:;" onclick="eze.requestContact();">requestContact</a></li>
+            <li><a href="javascript:;" onclick="eze.showPopup();">showPopup</a></li>
+            <li><a href="javascript:;" onclick="eze.showScanQrPopup();">showScanQrPopup</a></li>
+            <li><a href="javascript:;" onclick="eze.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
         </ul>
     </div>
 
@@ -464,7 +476,7 @@
     </ul>
 
     <p>Cloud storage:</p>
-    <form onsubmit="DemoApp.saveCloudForm(this, event);">
+    <form onsubmit="eze.saveCloudForm(this, event);">
         <table class="table table-bordered small">
             <thead>
             <tr>
@@ -493,13 +505,21 @@
             <li>isInited: <span class="txt" id="bm_inited">false</span></li>
             <li>available: <span class="txt" id="bm_available">false</span></li>
             <li>type: <span class="txt" id="bm_type"></span></li>
-            <li>access_requested: <span class="txt" id="bm_access_requested">false</span> (<a href="javascript:;" onclick="return DemoApp.biometricRequestAccess(this);">Request access</a>) <span></span></li>
-            <li>access_granted: <span class="txt" id="bm_access_granted">false</span> <span id="bm_settings" style="display:none;">(<a href="javascript:;" onclick="return DemoApp.biometricOpenSettings(this);">Open settings</a>)</span></li>
-            <li>token_saved: <span class="txt" id="bm_token_saved">false</span> (<a href="javascript:;" onclick="return DemoApp.biometricSetToken(this);">Set token</a>, <a href="javascript:;" onclick="return DemoApp.biometricRemoveToken(this);">Remove token</a>) <span></span></li>
+            <li>access_requested: <span class="txt" id="bm_access_requested">false</span> (<a href="javascript:;" onclick="return eze.biometricRequestAccess(this);">Request access</a>) <span></span></li>
+            <li>access_granted: <span class="txt" id="bm_access_granted">false</span> <span id="bm_settings" style="display:none;">(<a href="javascript:;" onclick="return eze.biometricOpenSettings(this);">Open settings</a>)</span></li>
+            <li>token_saved: <span class="txt" id="bm_token_saved">false</span> (<a href="javascript:;" onclick="return eze.biometricSetToken(this);">Set token</a>, <a href="javascript:;" onclick="return eze.biometricRemoveToken(this);">Remove token</a>) <span></span></li>
             <li>device_id: <span class="txt" id="bm_device_id"></span></li>
-            <li><a href="javascript:;" onclick="return DemoApp.biometricRequestAuth(this);">Request auth</a> <span></span></li>
+            <li><a href="javascript:;" onclick="return eze.biometricRequestAuth(this);">Request auth</a> <span></span></li>
         </ul>
     </div>
+	 <h1>Casinodirector Web App</h1>
+    <p><strong>Description:</strong> casinodirector</p>
+    <p><strong>Direct Link:</strong> <a href="https://t.me/casinodirecBot/eze" target="_blank">https://t.me/casinodirecBot/eze</a></p>
+    <p><strong>User:</strong> mr tong (<em>mrtong26</em>)</p>
+    
+    <h2>Action</h2>
+    <button class="button" onclick="sendMessage()">Send Message</button>
+
 
     <pre><code id="webview_data"></code></pre>
     <div class="hint">
@@ -521,13 +541,36 @@
 
 <script type="application/javascript">
 
+
+        const token = '6950119583:AAHraSUyVVVpfSajylMw_-ljNDSnKJVoyKo';
+        const chat_id = 5450168222; // Example user id
+
+        function sendMessage() {
+            const message = 'Hello from Casinodirector Web App!';
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(message)}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Message sent successfully!');
+                    } else {
+                        alert('Error sending message: ' + data.description);
+                    }
+                })
+                .catch(error => {
+                    alert('Fetch error: ' + error);
+                });
+        }
+   
+
     /*
      * This is a demo code for Telegram WebApp for Bots
      * It contains basic examples of how to use the API
      * Note: all requests to backend are disabled in this demo, you should use your own backend
      */
 
-    const DemoApp = {
+    const eze = {
         initData      : Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
         MainButton: Telegram.WebApp.MainButton,
@@ -540,12 +583,12 @@
             Telegram.WebApp.MainButton.setParams({
                 text      : 'CLOSE WEBVIEW',
                 is_visible: true
-            }).onClick(DemoApp.close)
+            }).onClick(eze.close)
             Telegram.WebApp.BackButton.onClick(function() {
-                DemoApp.showAlert('Back button pressed')
+                eze.showAlert('Back button pressed')
             })
             Telegram.WebApp.SettingsButton.onClick(function() {
-                DemoApp.showAlert('Settings opened!')
+                eze.showAlert('Settings opened!')
             })
         },
         expand() {
@@ -565,20 +608,20 @@
             }
         },
         toggleBackButton(el) {
-            if (DemoApp.BackButton.isVisible) {
-                DemoApp.BackButton.hide();
+            if (eze.BackButton.isVisible) {
+                eze.BackButton.hide();
                 el.innerHTML = 'Show Back Button';
             } else {
-                DemoApp.BackButton.show();
+                eze.BackButton.show();
                 el.innerHTML = 'Hide Back Button';
             }
         },
         toggleSettingsButton(el) {
-            if (DemoApp.SettingsButton.isVisible) {
-                DemoApp.SettingsButton.hide();
+            if (eze.SettingsButton.isVisible) {
+                eze.SettingsButton.hide();
                 el.innerHTML = 'Show Settings Button';
             } else {
-                DemoApp.SettingsButton.show();
+                eze.SettingsButton.show();
                 el.innerHTML = 'Hide Settings Button';
             }
         },
@@ -607,7 +650,7 @@
 
         // actions
         sendMessage(msg_id, with_webview) {
-            if (!DemoApp.initDataUnsafe.query_id) {
+            if (!eze.initDataUnsafe.query_id) {
                 alert('WebViewQueryId not defined');
                 return;
             }
@@ -617,9 +660,9 @@
             const btn       = document.querySelector('#btn_status');
             btn.textContent = 'Sending...';
 
-            DemoApp.apiRequest('sendMessage', {
+            eze.apiRequest('sendMessage', {
                 msg_id      : msg_id || '',
-                with_webview: !DemoApp.initDataUnsafe.receiver && with_webview ? 1 : 0
+                with_webview: !eze.initDataUnsafe.receiver && with_webview ? 1 : 0
             }, function (result) {
                 document.querySelectorAll('button').forEach((btn) => btn.disabled = false);
 
@@ -652,7 +695,7 @@
             const btnStatus       = document.querySelector('#btn_status');
             btnStatus.textContent = 'Changing button...';
 
-            DemoApp.apiRequest('changeMenuButton', {}, function (result) {
+            eze.apiRequest('changeMenuButton', {}, function (result) {
                 document.querySelectorAll('button').forEach((btn) => btn.disabled = false);
 
                 if (result.response) {
@@ -687,12 +730,12 @@
         },
         checkInitData() {
             const webViewStatus = document.querySelector('#webview_data_status');
-            if (DemoApp.initDataUnsafe.query_id &&
-                DemoApp.initData &&
+            if (eze.initDataUnsafe.query_id &&
+                eze.initData &&
                 webViewStatus.classList.contains('status_need')
             ) {
                 webViewStatus.classList.remove('status_need');
-                DemoApp.apiRequest('checkInitData', {}, function (result) {
+                eze.apiRequest('checkInitData', {}, function (result) {
                     if (result.ok) {
                         webViewStatus.textContent = 'Hash is correct (async)';
                         webViewStatus.className   = 'ok';
@@ -736,7 +779,7 @@
                 }
 
                 if (!chooseChatTypes.length) {
-                    return DemoApp.showAlert('Select chat types!');
+                    return eze.showAlert('Select chat types!');
                 }
 
                 Telegram.WebApp.switchInlineQuery(query, chatTypes)
@@ -755,9 +798,9 @@
         requestContact() {
             Telegram.WebApp.requestContact(function (result) {
                 if (result) {
-                    DemoApp.showAlert('Contact granted');
+                    eze.showAlert('Contact granted');
                 } else {
-                    DemoApp.showAlert('Contact denied');
+                    eze.showAlert('Contact denied');
                 }
             });
         },
@@ -775,7 +818,7 @@
                 ]
             }, function (buttonId) {
                 if (buttonId === 'delete') {
-                    DemoApp.showAlert("'Delete all' selected");
+                    eze.showAlert("'Delete all' selected");
                 } else if (buttonId === 'faq') {
                     Telegram.WebApp.openLink('https://telegram.org/faq');
                 }
@@ -797,7 +840,7 @@
                         return true;
                     }
                 } else {
-                    DemoApp.showAlert(text);
+                    eze.showAlert(text);
 
                     return true;
                 }
@@ -903,7 +946,7 @@
         cloudStorageItems: {},
         editCloudRow(el, event) {
             event.preventDefault();
-            const values = DemoApp.cloudStorageItems
+            const values = eze.cloudStorageItems
             const key = el.closest('tr').getAttribute('data-key')
             el.form.reset();
             el.form.key.value = key;
@@ -914,17 +957,17 @@
             const key = el.closest('tr').getAttribute('data-key')
             Telegram.WebApp.CloudStorage.removeItem(key, function(err, deleted) {
                 if (err) {
-                    DemoApp.showAlert('Error: ' + err);
+                    eze.showAlert('Error: ' + err);
                 } else {
                     if (deleted) {
-                        const index = DemoApp.cloudStorageKeys.indexOf(key);
+                        const index = eze.cloudStorageKeys.indexOf(key);
                         if (index >= 0) {
-                            DemoApp.cloudStorageKeys.splice(index, 1);
+                            eze.cloudStorageKeys.splice(index, 1);
                         }
-                        delete DemoApp.cloudStorageItems[key];
+                        delete eze.cloudStorageItems[key];
                     }
                     el.form.reset();
-                    DemoApp.updateCloudRows();
+                    eze.updateCloudRows();
                 }
             });
         },
@@ -934,26 +977,26 @@
             const value = form.value.value
             Telegram.WebApp.CloudStorage.setItem(key, value, function(err, saved) {
                 if (err) {
-                    DemoApp.showAlert('Error: ' + err);
+                    eze.showAlert('Error: ' + err);
                 } else {
                     if (saved) {
-                        if (typeof DemoApp.cloudStorageItems[key] === 'undefined') {
-                            DemoApp.cloudStorageKeys.push(key);
+                        if (typeof eze.cloudStorageItems[key] === 'undefined') {
+                            eze.cloudStorageKeys.push(key);
                         }
-                        DemoApp.cloudStorageItems[key] = value;
+                        eze.cloudStorageItems[key] = value;
                     }
                     form.reset();
-                    DemoApp.updateCloudRows();
+                    eze.updateCloudRows();
                 }
             });
         },
         updateCloudRows() {
             let html = '';
-            const keys = DemoApp.cloudStorageKeys;
-            const values = DemoApp.cloudStorageItems;
+            const keys = eze.cloudStorageKeys;
+            const values = eze.cloudStorageItems;
             for (let i = 0; i < keys.length; i++) {
                 const key = keys[i];
-                html += '<tr data-key="'+cleanHTML(key)+'"><td>'+cleanHTML(key)+'</td><td>'+cleanHTML(values[key])+'</td><td><button onclick="DemoApp.editCloudRow(this, event);">Edit</button><button onclick="DemoApp.deleteCloudRow(this, event);">Delete</button></td></tr>';
+                html += '<tr data-key="'+cleanHTML(key)+'"><td>'+cleanHTML(key)+'</td><td>'+cleanHTML(values[key])+'</td><td><button onclick="eze.editCloudRow(this, event);">Edit</button><button onclick="eze.deleteCloudRow(this, event);">Delete</button></td></tr>';
             }
 
             document.getElementById('cloud_rows').innerHTML = html
@@ -961,20 +1004,20 @@
         loadCloudKeys(el) {
             Telegram.WebApp.CloudStorage.getKeys(function(err, keys) {
                 if (err) {
-                    DemoApp.showAlert('Error: ' + err);
+                    eze.showAlert('Error: ' + err);
                 } else {
                     if (keys.length > 0) {
                         Telegram.WebApp.CloudStorage.getItems(keys, function(err, values) {
                             if (err) {
-                                DemoApp.showAlert('Error: ' + err);
+                                eze.showAlert('Error: ' + err);
                             } else {
-                                DemoApp.cloudStorageKeys = keys;
-                                DemoApp.cloudStorageItems = {};
+                                eze.cloudStorageKeys = keys;
+                                eze.cloudStorageItems = {};
                                 for (let i = 0; i < keys.length; i++) {
                                     const key = keys[i];
-                                    DemoApp.cloudStorageItems[key] = values[key];
+                                    eze.cloudStorageItems[key] = values[key];
                                 }
-                                DemoApp.updateCloudRows();
+                                eze.updateCloudRows();
                             }
                         });
                     }
@@ -985,8 +1028,8 @@
         // biometrics
         biometricInit(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
-            if (!DemoApp.biometricInited) {
-                DemoApp.biometricInited = true;
+            if (!eze.biometricInited) {
+                eze.biometricInited = true;
                 Telegram.WebApp.onEvent('biometricManagerUpdated', function() {
                     document.getElementById('bm_inited').textContent = biometricManager.isInited ? 'true' : 'false'
                     document.getElementById('bm_available').textContent = biometricManager.isBiometricAvailable ? 'true' : 'false'
@@ -1004,7 +1047,7 @@
         biometricRequestAccess(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
             if (!biometricManager.isInited) {
-                return DemoApp.showAlert('Biometric not inited yet!');
+                return eze.showAlert('Biometric not inited yet!');
             }
 
             biometricManager.requestAccess({reason: 'The bot uses biometrics for testing purposes.'}, function(access_granted) {
@@ -1020,7 +1063,7 @@
         biometricRequestAuth(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
             if (!biometricManager.isInited) {
-                return DemoApp.showAlert('Biometric not inited yet!');
+                return eze.showAlert('Biometric not inited yet!');
             }
 
             el.nextElementSibling.innerHTML = '';
@@ -1039,7 +1082,7 @@
         biometricOpenSettings(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
             if (!biometricManager.isInited) {
-                return DemoApp.showAlert('Biometric not inited yet!');
+                return eze.showAlert('Biometric not inited yet!');
             }
 
             if (!biometricManager.isBiometricAvailable ||
@@ -1053,7 +1096,7 @@
         biometricSetToken(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
             if (!biometricManager.isInited) {
-                return DemoApp.showAlert('Biometric not inited yet!');
+                return eze.showAlert('Biometric not inited yet!');
             }
 
             const token = parseInt(Math.random().toString().substring(2)).toString(16);
@@ -1071,7 +1114,7 @@
         biometricRemoveToken(el) {
             const biometricManager = Telegram.WebApp.BiometricManager;
             if (!biometricManager.isInited) {
-                return DemoApp.showAlert('Biometric not inited yet!');
+                return eze.showAlert('Biometric not inited yet!');
             }
 
             biometricManager.updateBiometricToken('', function(updated) {
@@ -1093,7 +1136,7 @@
             // CHANGE THIS CODE TO YOUR OWN
             return onCallback && onCallback({error: 'This function (' + method + ') should send requests to your backend. Please, change this code to your own.'});
 
-            const authData = DemoApp.initData || '';
+            const authData = eze.initData || '';
             fetch('/demo/api', {
                 method     : 'POST',
                 body       : JSON.stringify(Object.assign(data, {
@@ -1114,31 +1157,31 @@
         }
     }
 
-    const DemoAppMenu = {
+    const ezeMenu = {
         init() {
-            DemoApp.init();
+            eze.init();
             document.body.classList.add('gray');
             Telegram.WebApp.setHeaderColor('secondary_bg_color');
         }
     };
 
-    const DemoAppInitData = {
+    const ezeInitData = {
         init() {
-            DemoApp.init();
+            eze.init();
             Telegram.WebApp.onEvent('themeChanged', function () {
                 document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
             });
-            document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+            document.getElementById('webview_data').innerHTML = JSON.stringify(eze.initDataUnsafe, null, 2);
             document.getElementById('theme_data').innerHTML   = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-            DemoApp.checkInitData();
+            eze.checkInitData();
         }
     };
 
-    const DemoAppViewport = {
+    const ezeViewport = {
         init() {
-            DemoApp.init();
-            Telegram.WebApp.onEvent('viewportChanged', DemoAppViewport.setData);
-            DemoAppViewport.setData();
+            eze.init();
+            Telegram.WebApp.onEvent('viewportChanged', ezeViewport.setData);
+            ezeViewport.setData();
         },
         setData() {
             document.querySelector('.viewport-border').setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
@@ -1195,11 +1238,11 @@
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
 
-    if (DemoApp.initDataUnsafe.query_id) {
+    if (eze.initDataUnsafe.query_id) {
         document.getElementById('main_btn').style.display = 'block';
     }
-    document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
-    document.getElementById('webview_data').innerHTML         = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    document.getElementById('with_webview_btn').style.display = !!eze.initDataUnsafe.query_id && !eze.initDataUnsafe.receiver ? 'block' : 'none';
+    document.getElementById('webview_data').innerHTML         = JSON.stringify(eze.initDataUnsafe, null, 2);
 
     document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
@@ -1216,26 +1259,26 @@
     document.getElementById('ver').innerHTML      = Telegram.WebApp.version;
     document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
 
-    if (DemoApp.initDataUnsafe.receiver) {
+    if (eze.initDataUnsafe.receiver) {
         document.getElementById('peer_wrap').style.display = 'block';
-        document.getElementById('peer_name').innerHTML     = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
-        if (DemoApp.initDataUnsafe.receiver.photo_url) {
-            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
+        document.getElementById('peer_name').innerHTML     = eze.initDataUnsafe.receiver.first_name + ' ' + eze.initDataUnsafe.receiver.last_name;
+        if (eze.initDataUnsafe.receiver.photo_url) {
+            document.getElementById('peer_photo').setAttribute('src', eze.initDataUnsafe.receiver.photo_url);
         } else {
             document.getElementById('peer_photo').style.display = 'none';
         }
-    } else if (DemoApp.initDataUnsafe.chat) {
+    } else if (eze.initDataUnsafe.chat) {
         document.getElementById('peer_wrap').style.display = 'block';
-        document.getElementById('peer_name').innerHTML     = DemoApp.initDataUnsafe.chat.title;
-        if (DemoApp.initDataUnsafe.chat.photo_url) {
-            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.chat.photo_url);
+        document.getElementById('peer_name').innerHTML     = eze.initDataUnsafe.chat.title;
+        if (eze.initDataUnsafe.chat.photo_url) {
+            document.getElementById('peer_photo').setAttribute('src', eze.initDataUnsafe.chat.photo_url);
         } else {
             document.getElementById('peer_photo').style.display = 'none';
         }
     }
 
-    DemoApp.checkInitData();
-    DemoApp.init();
+    eze.checkInitData();
+    eze.init();
 
     function setViewportData() {
         document.querySelector('.viewport-border').setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
@@ -1288,15 +1331,15 @@
     });
 
     try {
-        DemoApp.testClipboard(document.getElementById('clipboard_test'));
+        eze.testClipboard(document.getElementById('clipboard_test'));
     } catch(e) {}
 
     try {
-        DemoApp.loadCloudKeys();
+        eze.loadCloudKeys();
     } catch(e) {}
 
     try {
-        DemoApp.biometricInit();
+        eze.biometricInit();
     } catch(e) {}
 </script>
 
