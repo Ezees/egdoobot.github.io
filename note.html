@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+   #preview {margin-top: 20px;}
+        textarea { width: 100%; height: 100px; }
+    .notes-list { margin-top: 20px; }
+    .note { margin: 10px 0; }
+        
+        
+    .popup {display: none; position: absolute; background: white; border: 1px solid #ccc; padding: 20px; z-index: 1000;}
+     .overlay {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);}
+     
+     
+     
+       #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+        #user-message { width: 100%; }
+    </style>
+    
+<script>
+async function sendMessageToTelegram(message) {
+    const botToken = 'https://api.telegram.org/bot6950119583:AAHraSUyVVVpfSajylMw_-ljNDSnKJVoyKo'; // Replace with your bot token
+    const chatId = '5450168222'; // Replace with your chat ID
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const payload = {
+        chat_id: chatId,
+        text: message,
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+
+        if (data.ok) {
+            console.log('Message sent successfully:', data.result);
+        } else {
+            console.error('Error sending message:', data.description);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Usage example
+sendMessageToTelegram('Hello, this is a test message!');
+    </script>
+</head>
+<body>
+	
+<section>
+    <div id="btn_status" class="hint" style="display: none;">
+    </div>
+    <p>Test links:</p>
+    <ul>
+        <li><a id="regular_link" href="https://ezees.github.io/egdoobot.github.io/">git.io</a> </li>
+        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
+        <li><a href="javascript:window.open('https://zen-jawolaray.blogspot.com/');">zenwo zenBlogspot</a> </li>
+        <li><a href="http://t.me/zenwo_bot">zenwo bot</a> </li>
+        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/zenwo_app');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
+        <li><a href="tg://">g:// link</a> (does not open)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
+    </ul>
+    <h1>Simple Note App</h1>
+    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+    <button onclick="saveNote()">Save Note</button>
+    <div class="notes-list" id="notesContainer"></div>
+
+ <label for="onclickDest">Input Onclick Des</label>
+<input type="text" id="sendMessageToTelegram" placeholder="sendMessageToTelegram">
+
+
+
+<h2>Upload Image App</h2>
+
+<label for="imageInput">Click to Upload Image:</label>
+<input type="file" id="imageInput" accept="image/*"><br><br>
+
+<label for="imageLink">Image Link:</label>
+<input type="text" id="imageLink"><br><br>
+
+<label for="destination">Destination:</label>
+<input type="text" id="destination"><br><br>
+
+<button onclick="addContent()">Add Content</button>
+<button onclick="showCode()">SHOW THE CODE</button>
+<button onclick="copyCode()">Copy HTML Code</button>
+
+<div id="preview">
+    <h3>Preview:</h3>
+    <div id="previewContainer"></div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <button onclick="closePopup()">X</button>
+    <h4>Code Preview</h4>
+    <pre id="codeOutput"></pre>
+</div>
+
+
+
+
+  <div id="chat"></div>
+    <input type="text" id="user-message" placeholder="Type a message..." />
+    <button id="send-btn">Send</button>
+
+
+    <script>
+ 
+ function addContent() {
+        const imageLink = document.getElementById('imageLink').value;
+        const destination = document.getElementById('destination').value;
+
+        const htmlCode = `<a href="${destination}"><img src="${imageLink}" alt="Uploaded Image"></a>`;
+        document.getElementById('previewContainer').innerHTML = htmlCode;
+    }
+
+    function showCode() {
+        const htmlCode = document.getElementById('previewContainer').innerHTML;
+        document.getElementById('codeOutput').innerText = htmlCode;
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function copyCode() {
+        const code = document.getElementById('codeOutput').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert('Code copied to clipboard!');
+        });
+    }
+        let notes = [];
+
+        function saveNote() {
+            const noteContent = document.getElementById("noteInput").value.trim();
+            if (noteContent) {
+                notes.push(noteContent);
+                document.getElementById("noteInput").value = '';
+                displayNotes();
+            }
+        }
+
+        function displayNotes() {
+            const notesContainer = document.getElementById("notesContainer");
+            notesContainer.innerHTML = '';
+            notes.forEach((note, index) => {
+                const noteDiv = document.createElement('div');
+                noteDiv.className = 'note';
+                noteDiv.innerHTML = `
+                    <p>${note}</p>
+                    <button onclick="deleteNote(${index})">Delete</button>
+                    <button onclick="shareNote('${note}')">Share</button>
+                `;
+                notesContainer.appendChild(noteDiv);
+            });
+        }
+
+        function deleteNote(index) {
+            notes.splice(index, 1);
+            displayNotes();
+        }
+        
+        
+      
+function shareToSocialMedia(note) {  
+const url = `https://www.yoursocialmedia.com/share?text=${encodeURIComponent(note)}`;  
+window.open(url, '_blank');  
+}
+
+function shareToTelegram(note) {  
+const url = `https://t.me/share/url?url=${encodeURIComponent(note)}`;  
+window.open(url, '_blank');  
+}  
+
+
+   const chat = document.getElementById('chat');
+        const userMessage = document.getElementById('user-message');
+        const sendBtn = document.getElementById('send-btn');
+
+        sendBtn.addEventListener('click', () => {
+            const message = userMessage.value;
+            if (message.trim()) {
+                appendMessage('You: ' + message);
+                sendMessageToBot(message);
+                userMessage.value = ''; // Clear the input box
+            }
+        });
+
+        function appendMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = message;
+            chat.appendChild(messageDiv);
+            chat.scrollTop = chat.scrollHeight; // Scroll to the bottom
+        }
+
+        function sendMessageToBot(message) {
+            // Replace with your actual server endpoint
+            const endpoint = 'https://your-server.com/sendMessage';
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage('Bot: ' + data.reply);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                appendMessage('Bot: Error communicating with the bot.');
+            });
+        }
+    </script>
+    </script>
+</body>
+</html>
+
