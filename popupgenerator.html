@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup Generator</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ads Image to Popup Generator</h1>
+    <label for="image-upload">Click to Upload Image:</label>
+    <input type="file" id="image-upload" accept="image/*"><span>No file chosen</span><br><br>
+
+    <label for="image-link">Image Link:</label>
+    <input type="text" id="image-link"><br><br>
+    
+    <label for="popup-id">Popup ID:</label>
+    <input type="text" id="popup-id"><br><br>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination"><br><br>
+
+    <button id="add-content">Add Content</button>
+    <button id="show-code">SHOW THE CODE</button>
+    <button id="copy-html">Copy HTML Code</button>
+
+    <h2>Preview:</h2>
+    <div id="preview"></div>
+
+    <h2>Code Preview:</h2>
+    <pre id="code-preview"></pre>
+</div>
+
+<script>
+    document.getElementById('add-content').onclick = function () {
+        const imageUrl = document.getElementById('image-link').value;
+        const popupId = document.getElementById('popup-id').value;
+        const destination = document.getElementById('destination').value;
+
+        const code = `
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="${imageUrl}" onclick="openPopup('${popupId}')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="${popupId}">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('${popupId}')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="${imageUrl}">
+                    <button onclick="window.open('${destination}')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+`;
+
+        document.getElementById('preview').innerHTML = `<img src="${imageUrl}" onclick="openPopup('${popupId}')" class="visible">`;
+        document.getElementById('code-preview').textContent = code;
+    };
+
+    document.getElementById('show-code').onclick = function () {
+        alert(document.getElementById('code-preview').textContent);
+    };
+
+    document.getElementById('copy-html').onclick = function () {
+        navigator.clipboard.writeText(document.getElementById('code-preview').textContent)
+            .then(() => {
+                alert('HTML code copied to clipboard');
+            });
+    };
+
+    function openPopup(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function closePopup(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
