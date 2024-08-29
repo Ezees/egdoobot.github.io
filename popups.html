@@ -1,0 +1,557 @@
+
+<style>
+body { font-family: Arial, sans-serif; }
+
+.btn-of {
+    padding: 10px 10px;
+    background-color: #bdae18;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-on{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close {
+            cursor: pointer;
+            color: red;
+            float: right;
+        }
+
+
+
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2px;
+    padding: 2px;
+}
+
+.image-grid img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+  
+.featured-item {
+     width: 150px;
+    height:  150px;
+    cursor: pointer;
+
+
+
+}
+
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+   }
+ @media only screen and (max-width: 600px) {
+       .container {
+           flex-direction: column;
+       }
+   }
+
+</style>
+
+    <img class="visible-on" src="" onclick="showPopup('')">
+
+
+ 
+
+
+
+ <div class="container-image-grid" id="image-grid">
+ 	<div class="image-grid">
+        <!-- Repeat this img element for 36 images -->
+    
+
+	
+
+	
+	<img class="visible-on" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&usqp=CAU" onclick="showPopup('8k8')">
+	 
+   <img class="visible-on" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&usqp" onclick="showPopup('swertyt99')">
+	
+
+	
+
+  <img class="visible-on"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" onclick="showPopup('milyon88')">
+        <!-- Add more images as needed -->
+        
+   <img class="visible-on"src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="showPopup('234win')">
+        <!-- Add more images as needed -->
+ 
+         
+   <img class="visible-on"src="https://download.ocms.cloud/v2/jln/Picture.3?version=3" onclick="showPopup('jilino1')">
+        <!-- Add more images as needed -->
+		
+	<img class="visible-on"src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" onclick="showPopup('agg777')">
+        <!-- Add more images as needed -->
+        
+   <img class="visible-on"src="https://xbjili.com/img/cg777.webp" onclick="showPopup('cg777')">
+        <!-- Add more images as needed -->
+ 
+         
+   <img class="visible-on"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" onclick="showPopup('okebet')">
+        <!-- Add more images as needed -->
+        
+    <img class="visible-on"src="https://xbjili.com/img/JILIPAPK.webp" onclick="showPopup('jilipark')">
+        <!-- Add more images as needed -->
+        
+   <img class="visible-on"src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" onclick="showPopup('phcity')">
+        <!-- Add more images as needed -->
+ 
+         
+   <img class="visible-on"src="https://xbjili.com/img/plusph.webp" onclick="showPopup('plusph')">
+        <!-- Add more images as needed -->
+        
+        
+ 
+		
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup('agg77')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="agg77">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('agg77')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png">
+                    <button onclick="window.open('https://www.agg779.win/?f=457745')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup('234win')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="234win">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('234win')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png">
+                    <button onclick="window.open('http://234win77.com/?a=253478')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://images.6929183.com/wsd-images-prod/goldpalace/template/wt8807_logo/wps_%E5%B9%B3%E5%8F%B0LOGO_20221203182708.png" onclick="openPopup('golden')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="golden">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('golden')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://images.6929183.com/wsd-images-prod/goldpalace/template/wt8807_logo/wps_%E5%B9%B3%E5%8F%B0LOGO_20221203182708.png">
+                    <button onclick="window.open('https://www.goldenpalasyo.org/')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://download.ocms.cloud/v2/jln/Picture.3?version=3" onclick="openPopup('jilino1')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="jilino1">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('jilino1')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://download.ocms.cloud/v2/jln/Picture.3?version=3">
+                    <button onclick="window.open('https://www.jilino1.online/?mid=mrtong')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+
+
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://images.11029984.com/wsd-images-prod/we1winphf3/merchant_resource/appdownloadicon/wps_APP_Icon_(3)_20231208172453.png" onclick="openPopup('we1win')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="we1win">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('we1win')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://images.11029984.com/wsd-images-prod/we1winphf3/merchant_resource/appdownloadicon/wps_APP_Icon_(3)_20231208172453.png">
+                    <button onclick="window.open('http://www.we1winphp3.com/?r=svh0886')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+
+
+<!--container of img visible -->
+<div class="container-image">
+    <div class="image-grid"><!-- show image below -->
+        <!-- start visible on grid container -->
+        <img class="visible" src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" onclick="openPopup('int')">
+        
+        <!-- start popup Content -->
+        <div class="popup-container">
+            <div class="popup" id="int">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('int')">X</span>
+                    <h2>Hello world</h2>
+                    <img class="featured-item" src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png">
+                    <button onclick="window.open('http://zahnh.int.games/?referralCode=gcu4208')">Quick View</button>
+                </div>
+            </div>
+        </div><!-- End Popup Content -->
+    </div>
+</div>
+
+
+ 
+  
+       
+       
+       
+       
+       
+<!-- POPUP CONTENER -->
+
+
+ <div class="popup-container">
+ 	
+<div class="popup" id="milyon88">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('milyon88')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('https://www.milyon88.games/?mid=mrtong')">Login</button>
+    <button class="btn-of" onclick="window.open('https://www.milyon88.games/?mid=mrtong')">Sign up</button></div>
+        
+        </div>
+      </div>
+
+
+
+<div class="popup" id="234win">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('234win')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+ 
+ 
+ 
+<div class="popup" id="jilino1">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('jilino1')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://download.ocms.cloud/v2/jln/Picture.3?version=3" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    
+    
+    
+  </div>
+    
+    
+    
+    
+  
+        
+     
+
+<div class="popup" id="agg777">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('agg777')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+ 
+ 
+ 
+<div class="popup" id="cg777">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('cg777')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://xbjili.com/img/cg777.webp" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    
+    
+    
+  </div>
+    
+    
+    
+    
+   
+     
+
+<div class="popup" id="okebet">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('okebet')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('https://www.milyon88.games/?mid=mrtong')">Sign up</button></div>
+        
+        </div>
+      </div>
+ 
+ 
+ 
+<div class="popup" id="jilipark">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('jilipark')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://xbjili.com/img/JILIPAPK.webp" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    
+    
+
+    
+    
+    
+    
+     <!-- END OF POPUP  NO1-->
+     
+
+<div class="popup" id="phcity">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('phcity')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+ 
+ 
+ 
+<div class="popup" id="plusph">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('plusph')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://xbjili.com/img/plusph.webp" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    
+    
+    
+	
+<div class="popup" id="swertyt99">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('swertyt99')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"><img class="featured-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&usqp" /> </div>
+<div class="bnt-container">
+  <button class="btn-on" onclick="window.open('https://www.swerte99.app/?mid=mrtong')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    	
+	
+	
+		
+<div class="popup" id="8k8">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('8k8')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"> 
+  <img class="featured-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&usqp=CAU" /> </div>
+  <div class="bnt-container">
+  <button class="btn-on" onclick="window.open('https://8k8app11.com/')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+      </div>
+    	
+	
+		
+	
+<div class="popup" id="swerte99">
+  <div class="popup-content">
+ <span class="close" onclick="closePopup('swerty99')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"> 
+  <img class="featured-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&usqp" /> </div>
+  <div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+
+    	
+	
+			
+<div class="popup" id="jilibet">
+  <div class="popup-content">
+ <span class="close"onclick="closePopup('jilibet')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"> 
+  <img class="featured-item" src="https://jilibetph.com/wp-content/uploads/2024/01/jilibet-1.png" /> </div>
+  <div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+	
+  </div>
+  
+  
+  
+  <div class="popup" id="jilibet">
+  <div class="popup-content">
+ <span class="close"onclick="closePopup('yy777')">&times;</span>
+  <h2>GOOD LUCK</h2>
+  <div id="img-on"> 
+  <img class="featured-item" src="https://jilibetph.com/wp-content/uploads/2024/01/jilibet-1.png" /> </div>
+  <div class="bnt-container">
+  <button class="btn-on" onclick="window.open('')">Login</button>
+    <button class="btn-of" onclick="window.open('')">Sign up</button></div>
+        
+        </div>
+	
+  </div>
+    
+    
+    
+
+      
+     
+
+<script>
+
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+function showPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+
+}
+
+// Add additional JavaScript functionality if needed.
+
+ </script>
+
+ 
+
+
+
+
+
+
+
+<script type='text/javascript'>
+//<![CDATA[
+
+
+//]]>
+</script>
+
