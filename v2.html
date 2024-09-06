@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup Generator</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        
+        .btn-note {
+            margin: 5px;
+            color: Write;
+            background-color: green;
+        }
+        
+        .text-noteArea {
+            width: 100%;
+            height: 150px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+		
+.btn-login {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2px;
+    padding: 2px;
+}
+
+.image-grid img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+  
+    </style>
+    <script>
+    function sendMessage() {
+      const message = document.getElementById('message').value;
+      const token = '6950119583:AAHraSUyVVVpfSajylMw_-ljNDSnKJVoyKo';
+      const chatId = 5450168222; // Replace with the user's chat ID
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            alert('Message sent successfully!');
+          } else {
+            alert('Failed to send message. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error sending message:', error);
+          alert('An error occurred while sending the message.');
+        });
+    }
+	
+	function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+	
+}
+
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+}
+
+// Add additional JavaScript functionality if needed.
+
+
+
+
+
+function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.style.display = 'none'; // Hide the popup
+    }
+}
+
+
+
+// Close popups when clicking outside of them
+window.onclick = function(event) {
+    const popups = document.getElementsByClassName('popup');
+    for (let i = 0; i < popups.length; i++) {
+        if (event.target == popups[i]) {
+            popups[i].style.display = 'none';
+        }
+    }
+};
+  
+  </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Popup Generator</h1> 
+   <input type="text" placeholder="Input text in regular input..." id="search">
+    <button type="button" id="searchButton">Search Open browser </button>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('search').value;
+            const url = query ? `https://www.google.com/search?q=${encodeURIComponent(query)}` : 'https://google.com/';
+            window.open(url, '_blank'); // Opens in a new tab
+        });
+  </script>
+  
+  <div class="referallis">
+  	
+
+
+
+<div class="markdown-container" data-document>
+  <h1 id="oldfereral">fereral</h1>
+<p>Oldfereral</p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" /><a href=""> </a></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" />
+<a href=""></a></li>
+</ul>
+  </div>
+  <div class="btn-container">
+ <button onclick="window.open('https://ezees.github.io/html-template.github.io/')">Html Teamplate</button>
+ <button onclick="window.open('https://www.blogger.com/')">blogger.com</button>
+ <button onclick="window.open('https://zen-jawolaray.blogspot.com/')">zen-jawolaray</button>
+ <button onclick="window.open('https://jawo-laray.blogspot.com/')">jawo-laray</button>
+ <button onclick="window.open('https://jawolaray.blogspot.com/')">jawolaray</button>
+ <button onclick="window.open('https://ezees.github.io/mrtong.github.io')">mrtong.io</button>
+ <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button>
+  </div>
+  
+  <div>   </div>
+  
+  <a href="https://github.com/Ezees/egdoobot.github.io/tree/07b9d3f8c19964390c48b57ddbed104b97382e42"><p>github</p></a> 
+     <a href="https://www.blogger.com/"><p>blogger.com</p></a>   <h1>Send Message to Bot</h1>
+     
+   <div class="bot-contanir" id="sendMessage">
+   	  <label for="message">Message:</label>
+  <input type="text" id="message" placeholder="Enter your message">
+  
+  <button onclick="sendMessage()">Send Message</button>
+  <br><br>
+   </div>
+<div class="note-container" id="Notebook">
+    <h1>Simple Notebook</h1>
+    <textarea class="text-noteArea" id="noteArea" placeholder="Write your note here..."></textarea>
+    <br>
+ <button class="btn-note" onclick="saveNote()">Save</button>
+    <button class="btn-note" onclick="deleteNote()">Delete</button>
+    <button class="btn-note" onclick="previewNote()">Preview</button>
+    <button class="btn-note" onclick="shareNote()">Share</button>
+
+    <h2>Your Notes:</h2>
+    <div id="notesList"></div>
+</div>
+  
+
+    <label for="image-upload">Click to Upload Image:</label>
+    <input type="file" id="image-upload" accept="image/*"><span>No file chosen</span><br><br>
+
+    <label for="image-link">Image Link:</label>
+    <input type="text" id="image-link"><br><br>
+    
+    <label for="popup-id">Popup ID:</label>
+    <input type="text" id="popup-id"><br><br>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination"><br><br>
+
+    <button id="add-content">Add Content</button>
+    <button id="show-code">SHOW THE CODE</button>
+    <button id="copy-html">Copy HTML Code</button>
+
+    <h2>Preview:</h2>
+    <div id="preview"></div>
+
+    <h2>Code Preview:</h2>
+    <pre id="code-preview"></pre>
+</div>
+
+
+
+
+
+
+<script>
+    document.getElementById('add-content').onclick = function () {
+        const imageUrl = document.getElementById('image-link').value;
+        const popupId = document.getElementById('popup-id').value;
+        const destination = document.getElementById('destination').value;
+
+        const code = `
+
+<div class="image-item" data-id="${popupId}" data-image="${imageUrl}" data-destination="${destination}">
+ <img class="visible" src="${imageUrl}" onclick="openPopup(this)">
+        </div>
+
+`;
+
+        document.getElementById('preview').innerHTML = `<img src="${imageUrl}" onclick="openPopup('${popupId}')" class="visible">`;
+        document.getElementById('code-preview').textContent = code;
+    };
+
+    document.getElementById('show-code').onclick = function () {
+        alert(document.getElementById('code-preview').textContent);
+    };
+
+    document.getElementById('copy-html').onclick = function () {
+        navigator.clipboard.writeText(document.getElementById('code-preview').textContent)
+            .then(() => {
+                alert('HTML code copied to clipboard');
+            });
+    };
+
+    function openPopup(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function closePopup(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+<script type="text/javascript">    
+        const notes = [];
+
+        function saveNote() {
+            const noteArea = document.getElementById("noteArea");
+            const noteText = noteArea.value.trim();
+            if (noteText) {
+                notes.push(noteText);
+                noteArea.value = ''; // Clear the area
+                displayNotes();
+            }
+        }
+
+        function deleteNote() {
+            const noteArea = document.getElementById("noteArea");
+            noteArea.value = ''; // Clear the area
+        }
+
+        function previewNote() {
+            const noteArea = document.getElementById("noteArea");
+            alert(noteArea.value); // Preview the current note
+        }
+
+        function shareNote() {
+            const noteArea = document.getElementById("noteArea");
+            const noteText = noteArea.value.trim();
+            if (noteText) {
+                const shareableLink = encodeURIComponent(noteText);
+                alert(`Share this link: ${window.location.href}?note=${shareableLink}`);
+            }
+        }
+
+        function displayNotes() {
+            const notesList = document.getElementById("notesList");
+            notesList.innerHTML = notes.map(note => `<p>${note}</p>`).join('');
+        }
+    
+    </script>
+
+</body>
+</html>
