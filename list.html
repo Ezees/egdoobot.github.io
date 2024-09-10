@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Popup Generator</title>
+ <title>MrTong Dabord</title>
     <style>
-        .container {
-            margin: 20px;
-        }
-        .popup {
-            display: none;
-            position: absolute;
-            background-color: white;
-            border: 1px solid black;
-            padding: 10px;
-        }
-        
+
         .btn-note {
             margin: 5px;
             color: Write;
@@ -41,25 +31,6 @@
 }
 
 
-.popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-}
-
 .close {
     position: absolute;
     top: 10px;
@@ -68,18 +39,76 @@
     font-size: 20px;
 }
 
+
+
+
+
 .image-grid {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 2px;
-    padding: 2px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 2px;
+        }
+        
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            transition: transform 0.2s;
+        }
+        .image-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            position: relative;
+            background: #fff;
+            padding: 5px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            color: red;
+        }
+ 
+ 
+
+ .visible {
+      	width: 100px; 
+      	height: 100px; 
+      	margin: 10px;
+       }
+       
+
+
+.popup {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.image-grid img {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
   
     </style>
     <script>
@@ -103,48 +132,38 @@
         });
     }
 	
-	function openPopup(popupId) {
-    document.getElementById(popupId).style.display = 'flex';
 	
-}
-
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = 'none';
-}
-
-// Add additional JavaScript functionality if needed.
-
-
-
-
-
-function closePopup(popupId) {
-    const popup = document.getElementById(popupId);
-    if (popup) {
-        popup.style.display = 'none'; // Hide the popup
-    }
-}
-
-
-
-// Close popups when clicking outside of them
-window.onclick = function(event) {
-    const popups = document.getElementsByClassName('popup');
-    for (let i = 0; i < popups.length; i++) {
-        if (event.target == popups[i]) {
-            popups[i].style.display = 'none';
-        }
-    }
-};
-  
   </script>
+      <script>
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+    
+    
 </head>
 <body>
+<div class="separator" style="color: green; position: center;
+    top: 0px;
+    right: 50%;
+    cursor: pointer;
+    font-size: 10px;
+  align-items: center;">
+ <h1>Tools By: MrTong</h1> 
+ 
+</div>
 
-<div class="container">
-    <h1>Popup Generator</h1> 
-   <input type="text" placeholder="Input text in regular input..." id="search">
+
+
+
+
+
+
+   
+	<button onclick="refreshPage()">Refresh</button></div> 
+
+    
+  <div clss="search-container"><input type="text" placeholder="Input text in regular input..." id="search">
     <button type="button" id="searchButton">Search Open browser </button>
 
     <script>
@@ -154,28 +173,118 @@ window.onclick = function(event) {
             window.open(url, '_blank'); // Opens in a new tab
         });
   </script>
-  
-  <div class="referallis">
-  	
 
+</div>
+
+    <!-- ========
+    
+    
+    
+    
+    ===-->
+
+  
+  
+  
+<div class="container-image">
+    <div class="image-grid">
+        <div class="image-item" data-id="popup1" data-image="" data-destination="">
+            <img class="visible" src="" onclick="openPopup(this)">
+        </div>
+        
+        
+        
+        
+        <div class="image-item" data-id="popup2" data-image="" data-destination="destination2">
+            <img class="visible" src="" onclick="openPopup(this)">
+        </div>
+        
+     <div class="image-item" data-id="popup3" data-image="" data-destination="destination2">
+            <img class="visible" src="" onclick="openPopup(this)">
+        </div>
+        <!-- Add more image-item blocks as needed -->
+    </div>
+</div>
+
+<div class="popup-container" id="popup-container">
+    <!-- Popup content will be injected dynamically -->
+</div>
+
+
+<!-===
+
+
+
+====-->
+
+
+<!--     -->
+  	    <h1>Image Downloader</h1>
+    <input type="text" id="imageLink" placeholder="Enter Image URL">
+    <button onclick="loadImage()">View Image</button>
+    <br><br>
+    <img id="displayedImage" style="display:none; max-width: 100px; max-height: 100px;">
+    <br>
+    <a id="downloadLink" style="display:none;">Download</a>
+
+    <script>
+        function loadImage() {
+            const imageUrl = document.getElementById('imageLink').value;
+            const img = document.getElementById('displayedImage');
+            img.src = imageUrl;
+            img.style.display = 'block';
+            
+            // Show download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.style.display = 'block';
+            downloadLink.onclick = function () {
+                downloadImage(imageUrl);
+            };
+            downloadLink.textContent = 'Download Image';
+        }
+
+        function downloadImage(url) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.src = url;
+
+            img.onload = function() {
+                canvas.width = 100; // Set canvas to 100x100
+                canvas.height = 100;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                // Create a link to download
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = '${imageName}.png';
+                link.click();
+            };
+        }
+    </script>
 
 
 <div class="markdown-container" data-document>
-  <h1 id="oldfereral">fereral</h1>
-<p>Oldfereral</p>
+  <h1 id="oldfereral">Note List</h1>
+<p>  <input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" /></p>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" /><a href=""> </a></li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" />
 <a href=""></a></li>
 </ul>
   </div>
+  
+  
+  
   <div class="btn-container">
- <button onclick="window.open('')">Quick View</button>
+ <button onclick="window.open('https://ezees.github.io/html-template.github.io/')">Html Teamplate</button>
  <button onclick="window.open('https://www.blogger.com/')">blogger.com</button>
  <button onclick="window.open('https://zen-jawolaray.blogspot.com/')">zen-jawolaray</button>
  <button onclick="window.open('https://jawo-laray.blogspot.com/')">jawo-laray</button>
  <button onclick="window.open('https://jawolaray.blogspot.com/')">jawolaray</button>
  <button onclick="window.open('https://ezees.github.io/mrtong.github.io')">mrtong.io</button>
+ <button onclick="window.open('https://jawo-laray.blogspot.com/')">️PhPageGame  </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button>
   </div>
   
   <div>   </div>
@@ -203,7 +312,7 @@ window.onclick = function(event) {
     <div id="notesList"></div>
 </div>
   
-
+<div class="container-add-img">
     <label for="image-upload">Click to Upload Image:</label>
     <input type="file" id="image-upload" accept="image/*"><span>No file chosen</span><br><br>
 
@@ -223,9 +332,115 @@ window.onclick = function(event) {
     <h2>Preview:</h2>
     <div id="preview"></div>
 
-    <h2>Code Preview:</h2>
-    <pre id="code-preview"></pre>
+
+
+ <div class="code-preview-container" id="Preview-container">
+    <h1>Code Preview</h1>
+    <textarea class="text-codeArea" id="code-preview" placeholder="code-preview here..." rows="10" cols="50"></textarea>
+    <br>
+    <button id="preview-button">Preview Code</button>
+    <div class="preview-output" id="preview-output"></div>
 </div>
+
+
+
+
+ 
+<button id="sharePost" onclick="opensharePostLink()">Share</button>
+
+<script>
+  function sharePost() {
+   var postUrl = window.location.href;
+        
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(postUrl), 'Share on Facebook', 'width=600,height=400');
+        
+        // Add similar lines for other social media platforms like Twitter, LinkedIn, etc.
+  
+    }
+  </script>
+    
+
+
+
+
+
+
+
+
+
+
+<div class='title_section_container'>
+    <div class='border line'></div>
+    <div class='title_txt' id="latest-results">Loading...</div>
+</div>
+
+<script type='text/javascript'>
+    var tampil = 6;
+    var showpostsummary = true;
+    var numchars = 6;
+    var titlenumchars = 35;
+
+    // Callback function to handle the JSON data
+    function mycallback(data) {
+        // Sample processing; you might want to adjust based on actual data structure
+        var resultsCount = data.feed.entry.length; // Count the number of posts
+        var latestCount = Math.min(resultsCount, tampil); // Limit to 'tampil'
+
+        // Construct the title text
+        var titleText = `<strong>${latestCount}</strong>k<br/><span>.See the latest Superior Online Casino</span>`;
+        
+        // Update the title text in the HTML
+        document.getElementById("latest-results").innerHTML = titleText;
+    }
+</script>
+
+<script type="text/javascript" src="http://jawo-laray.blogspot.com/feeds/posts/default/-/?orderby=updated&alt=json-in-script&callback=mycallback"></script>
+
+
+
+<script>
+    document.getElementById('preview-button').addEventListener('click', function() {
+        const code = document.getElementById('code-preview').value;
+        const previewOutput = document.getElementById('preview-output');
+        
+        // Safely render code as HTML by escaping HTML characters
+        const escapedCode = escapeHtml(code);
+        
+        previewOutput.innerHTML = escapedCode;
+    });
+
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+</script>
+
+<style>
+    .code-preview-container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .text-codeArea {
+        width: 100%;
+        height: 200px;
+        font-family: monospace;
+    }
+
+    #preview-output {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow: auto;
+        white-space: pre-wrap; /* Ensures that the formatting is preserved */
+        background-color: #f9f9f9;
+    }
+</style>
 
 <script>
     document.getElementById('add-content').onclick = function () {
@@ -234,25 +449,11 @@ window.onclick = function(event) {
         const destination = document.getElementById('destination').value;
 
         const code = `
-<!--container of img visible -->
-<div class="container-image">
-    <div class="image-grid"><!-- show image below -->
-        <!-- start visible on grid container -->
-        <img class="visible" src="${imageUrl}" onclick="openPopup('${popupId}')">
-        
-        <!-- start popup Content -->
-        <div class="popup-container">
-            <div class="popup" id="${popupId}">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup('${popupId}')">X</span>
-                    <h2>Hello world</h2>
-                    <img class="featured-item" src="${imageUrl}">
-                    <button onclick="window.open('${destination}')">Quick View</button>
-                </div>
-            </div>
-        </div><!-- End Popup Content -->
-    </div>
-</div>
+
+<div class="image-item" data-id="${popupId}" data-image="${imageUrl}" data-destination="${destination}">
+ <img class="visible" src="${imageUrl}" onclick="openPopup(this)">
+        </div>
+
 `;
 
         document.getElementById('preview').innerHTML = `<img src="${imageUrl}" onclick="openPopup('${popupId}')" class="visible">`;
@@ -270,13 +471,7 @@ window.onclick = function(event) {
             });
     };
 
-    function openPopup(id) {
-        document.getElementById(id).style.display = 'block';
-    }
-
-    function closePopup(id) {
-        document.getElementById(id).style.display = 'none';
-    }
+    
 </script>
 
 <script type="text/javascript">    
@@ -318,5 +513,90 @@ window.onclick = function(event) {
     
     </script>
 
+
+<script>
+
+function openPopup(img) {
+    const item = img.parentElement;
+    const popupId = item.getAttribute('data-id');
+    const image = item.getAttribute('data-image');
+    const destination = item.getAttribute('data-destination');
+
+    const popupContent = `
+        <div class="popup" id="${popupId}">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('${popupId}')">X</span>
+                <h2>Hello world</h2>
+                <img class="featured-item" src="${image}">
+                <button onclick="window.open('${destination}')">Quick View</button>
+            </div>
+        </div>
+    `;
+
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.innerHTML = popupContent;
+    popupContainer.style.display = 'flex'; // Show popup
+}
+
+function closePopup(popupId) {
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.style.display = 'none'; // Hide popup
+    popupContainer.innerHTML = ''; // Clear the content
+}
+
+</script>
+<script>
+
+function destination(url) {
+    const popupContainer = document.getElementById('popup-container');
+    const popupImage = document.getElementById('popup-image');
+    const popupDestination = document.getElementById('popup-destination');
+
+    popupImage.src = img.parentElement.dataset.image;
+    popupDestination.textContent = img.parentElement.dataset.destination;
+    popupContainer.style.display = 'flex';
+}
+
+
+</script>
+
+
+
+    <script>
+        function loadImage() {
+            const imageUrl = document.getElementById('imageLink').value;
+            const img = document.getElementById('displayedImage');
+            img.src = imageUrl;
+            img.style.display = 'block';
+            
+            // Show download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.style.display = 'block';
+            downloadLink.onclick = function () {
+                downloadImage(imageUrl);
+            };
+            downloadLink.textContent = 'Download Image';
+        }
+
+        function downloadImage(url) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.src = url;
+
+            img.onload = function() {
+                canvas.width = 100; // Set canvas to 100x100
+                canvas.height = 100;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                // Create a link to download
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'downloaded-image.png';
+                link.click();
+            };
+        }
+    </script>
 </body>
 </html>
