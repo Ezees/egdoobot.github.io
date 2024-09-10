@@ -153,14 +153,7 @@
  
 </div>
 
-
-
-
-
-
-
-   
-	<button onclick="refreshPage()">Refresh</button></div> 
+<button onclick="refreshPage()">Refresh</button>
 
     
   <div clss="search-container"><input type="text" placeholder="Input text in regular input..." id="search">
@@ -191,18 +184,7 @@
         <div class="image-item" data-id="popup1" data-image="" data-destination="">
             <img class="visible" src="" onclick="openPopup(this)">
         </div>
-        
-        
-        
-        
-        <div class="image-item" data-id="popup2" data-image="" data-destination="destination2">
-            <img class="visible" src="" onclick="openPopup(this)">
-        </div>
-        
-     <div class="image-item" data-id="popup3" data-image="" data-destination="destination2">
-            <img class="visible" src="" onclick="openPopup(this)">
-        </div>
-        <!-- Add more image-item blocks as needed -->
+    <!-- Add more image-item blocks as needed -->
     </div>
 </div>
 
@@ -219,14 +201,13 @@
 
 
 <!--     -->
-  	    <h1>Image Downloader</h1>
+    <h1>Image Downloader</h1>
     <input type="text" id="imageLink" placeholder="Enter Image URL">
     <button onclick="loadImage()">View Image</button>
     <br><br>
     <img id="displayedImage" style="display:none; max-width: 100px; max-height: 100px;">
     <br>
-    <a id="downloadLink" style="display:none;">Download</a>
-
+    <a id="downloadLink" style="display:none;">Download Image</a>
     <script>
         function loadImage() {
             const imageUrl = document.getElementById('imageLink').value;
@@ -258,12 +239,11 @@
                 // Create a link to download
                 const link = document.createElement('a');
                 link.href = canvas.toDataURL('image/png');
-                link.download = '${imageName}.png';
+                link.download = 'downloaded-image.png';
                 link.click();
             };
         }
     </script>
-
 
 <div class="markdown-container" data-document>
   <h1 id="oldfereral">Note List</h1>
