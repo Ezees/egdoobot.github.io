@@ -1,3 +1,33 @@
+const { createDirs } = require('./modules/create_dirs');
+const { createFlags } = require('./modules/create_flags');
+const { fixBins, fixCompradas } = require('./modules/patch_fix');
+const { conn } = require('./modules/database');
+
+async function main() {
+    await createDirs(['temp', 'config/cert']);
+    await createFlags();
+    await fixBins();
+    await fixCompradas();
+}
+
+async function run() {
+    try {
+        await main();
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Bot encerrado pelo usuário!');
+            await conn.close();
+            process.exit();
+        } else {
+            console.error(`Erro: ${error.message}\n\nBot encerrado!`);
+            await conn.close();
+        }
+    }
+}
+
+if (require.main === module) {
+    run();
+}
 
 
 // bot.min.js  
