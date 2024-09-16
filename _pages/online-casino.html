@@ -62,9 +62,9 @@ function openPopup(img) {
         <div class="popup" id="${popupId}">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('${popupId}')">X</span>
-         <a aria-label='Hello world' class='h2' data-text='Hello world' href='' rel='noopener' target='_blank'><h3 class='title'>Hello world</h3>
+         <a aria-label='Play NOW' class='Play-NOW' data-text='Hello world' href='' rel='noopener' target='_blank'><span class="Play-NOW" onclick="window.open('${destination}')">Play NOW</span></a>
                 <img class="featured-item" src="${image}">
-			    <button><span class="Quick View" onclick="window.open('${destination}')">Quick View</span></button>  
+			    <button><span class="Quick View" onclick="window.open('${destination}')">Quick View</span></button> 
             </div>
         </div>
     `;
