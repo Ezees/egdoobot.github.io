@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Input Form</title>
+    <style>
+        /* Basic styling for the form */
+        .member-form {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-addmember, .btn-save {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-addmember:hover, .btn-save:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="member-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
+        
+        <label for="size">Size:</label>
+        <input type="text" id="size" placeholder="Enter size">
+
+        <label for="paid">Paid:</label>
+        <input type="checkbox" id="paid"> ☑️
+
+        <label for="note">Add Note:</label>
+        <input type="text" id="note" placeholder="Enter note">
+        
+        <button class="btn-addmember" onclick="addMember()">ADD</button>
+        <button class="btn-save" onclick="saveMember()">Save</button>
+    </div>
+
+    <h2>Member</h2>
+    <div id="memberList"></div>
+
+    <script>
+        let members = [];
+
+        function addMember() {
+            const name = document.getElementById("name").value;
+            const size = document.getElementById("size").value;
+            const paid = document.getElementById("paid").checked;
+            const note = document.getElementById("note").value;
+
+            if (name && size) {
+                members.push({ name, size, paid, note });
+                displayMembers();
+                clearForm();
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+
+        function saveMember() {
+            // Save functionality using Facebook Messenger or any desired method
+            console.log("Members saved:", members);
+            alert("Members saved!");
+        }
+
+        function displayMembers() {
+            const memberList = document.getElementById("memberList");
+            memberList.innerHTML = "";
+            members.forEach(member => {
+                memberList.innerHTML += `<div>${member.name} - ${member.size} - ${member.paid ? 'Paid' : 'Not Paid'} - Note: ${member.note}</div>`;
+            });
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = '';
+            document.getElementById("size").value = '';
+            document.getElementById("paid").checked = false;
+            document.getElementById("note").value = '';
+        }
+    </script>
+
+</body>
+</html>
