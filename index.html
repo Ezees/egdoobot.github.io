@@ -522,6 +522,23 @@ h2 {
 /* Post Next or Prev */ .chpN{margin:4em 0 0;display:flex;justify-content:space-between;flex-wrap:wrap;position:relative;width:calc(100% + 20px);left:-10px;right:-10px; font-size:14px;font-family:var(--fontB);line-height:1.6em} .chpN >*{margin:0 10px;flex:0 0 calc(50% - 20px);display:inline-flex;flex-direction:column;color:inherit!important;cursor:default} .chpN >*::before{content:'Previous Chapter'} .chpN >*:not(:first-child)::before{content:'Next Chapter'} .chpN >*::after{content:attr(data-text);display:block; /*display:-webkit-box;*/-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; opacity:.6; font-size:12px;font-family:var(--fontBa);line-height:1.5em;margin-top:4px;cursor:pointer} .chpN >*:hover::after{text-decoration:underline} .chpN >*:not(:first-child){align-items:flex-end; text-align:right} .chpN.n{justify-content:flex-end} .chpN.p{justify-content:flex-start}
 /* Changelogs and Purchase Box */ .ptr{cursor:pointer} .cLg, .prc{position:fixed;bottom:0;left:0;right:0;margin:0;padding:40px 0;width:100%;height:100%;background:var(--contentB);font-family:var(--fontBa);font-size:15px;z-index:51;-webkit-transition:var(--trans-1);transition:var(--trans-1);overflow-y:auto;opacity:0;visibility:hidden} .cLg .lgCl, .prcCl{display:flex;align-items:center;height:22px;position:absolute;top:20px;right:25px;cursor:pointer} .cLg .lgCl::before, .prcCl::before{content:'Close';font-size:11px;padding-right:8px;font-family:var(--fontB)} .cLg .lgCl::after, .prcCl::after{content:'\2715';font-size:16px;line-height:18px;font-family:var(--fontB)} .cLg .lgCo{width:100%;max-width:var(--contentW);padding:0 20px;margin:0 auto} .cLg .lgCo h2{margin-top:10px;font-family:var(--fontBa)} .cLg .lgCo p{margin:1.7em 0;line-height:1.7em} .cLg .lgCo ol,.cLg .lgCo ul{padding-left:30px} .cLg .lgCo li{line-height:1.6rem} label[for='onChangelog']{cursor:pointer} .clgI:checked ~ .cLg, .prcI:checked ~ .prc, .prcI:checked ~ .prc .fCls{opacity:1;visibility:visible} .prc{background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden} .prcCo{width:calc(100% - 40px);max-width:780px;max-height:calc(100% - 40px);overflow-y:auto;position:relative;background:#fefefe;display:flex;flex-wrap:wrap;border-radius:5px;margin-top:-100%;-webkit-transition:all .1s ease;transition:all .1s ease;z-index:3} .prcDt{width:55%;flex-shrink:0;background:#f1f1f0;padding:50px 25px 20px} .prcMt{width:45%;flex-shrink:0;padding:50px 25px 20px} .prcCo .prcTt{margin-top:0;margin-bottom:30px;font-size:1.3rem;font-family:var(--fontBa)} .prcNm, .prcPr{font-weight:900;margin-bottom:20px;color:var(--headC)} .prcNm::before, .prcPr::before{content:attr(data-text);font-size:12px;display:block;font-weight:400;color:var(--bodyC)} .prcPr{font-size:2rem} .prcPr span{font-size:15px} .prcPr .paypal::before{content:'/ $'} .prcPr i{font-style:normal} .prcPr i::before, .prcPr span.paypal::after{content:attr(data-text)} .prcNm::after{content:attr(data-title)} .prcInfo{font-size:13px;line-height:1.7em;margin-top:40px} .prcLk .button{display:flex;margin-right:0;padding:12px 20px} .prcLk .button svg{margin-right:12px} .prcLk .button svg.line{fill:none;stroke-width:1.8} .prcLk .transfer svg{height:18px;stroke:#05275b} .prcLk .paypal svg{fill:#0079C1} .prcLk .gumroad svg{height:18px;fill:#1d1d1d} .prcLk .themeforest{} .prcCf{font-size:13px;text-align:right;margin-top:35px} .prcI:checked ~ .prc .prcCo{margin-top:0} @media screen and (max-width:480px){.prcCo{display:block} .prcDt{width:100%;background:transparent;padding-top:16px} .prcMt{width:100%;background:#f1f1f0;border-radius:5px 5px 0 0;padding-top:25px} .prcNm{display:none} .prcInfo{margin-top:0;font-size:12px} .prcCo .prcDt .prcTt{margin-bottom:20px} .Blog .post .prcDt .prcTt{margin-bottom:10px}} .onHome .prc .prcNm::before{margin-bottom:8px} .drK .prcDt, .drK .prcCo{background:var(--darkB)} .drK .prcMt{background:var(--darkBs)} .drK .prcMt, .drK .prcNm, .drK .prcPr, .drK .prcNm::before, .drK .prcPr::before, .drK .prcCo{color:var(--darkT)} .drK .prcLk .transfer svg{stroke:var(--darkT)} .drK .prcLk .paypal svg, .drK .prcLk .gumroad svg{fill:var(--darkT)} .drK .cLg{background:var(--darkB)} .drK .lgCo{background:var(--darkB)} 
 
+.slide-image {
+
+  display: block;
+  max-width: 420px;
+  height: 240px;
+  margin: 0 0 15px 0;
+}
+.slider-container {
+  max-width: 390px;
+  position: relative;
+  padding: 10px;
+   color: #fff;
+   box-shadow: 4px 4px 2px #ffc;
+   -webkit-box-shadow: 4px 4px 2px #ffc;
+   -moz-box-shadow: 4px 4px 2px #ffc;
+  
+}
 /*]]>
 */</style>
 
@@ -741,8 +758,8 @@ Terms
 </a>
 </li>
 <li>
-<a href='openpopup.html'>
-
+<a href='/p/disclaimer.html'>
+Disclaimer
 </a>
 </li>
 <li>
@@ -1002,12 +1019,12 @@ Welcome
 
 <!--[ change href='#' atribute to add link -->
 <div class='ln'>
-  <a class='button' href='https://ezees.github.io/egdoobot.github.io' target='_blank'><i class='icon cart'></i>Explore New Theme</a>
+  <a class='button' href='#' target='_blank'><i class='icon cart'></i>Explore New Theme</a>
 </div>
 <div class='ln'>
-  <a class='l' href='https://ezees.github.io/egdoobot.github.io/list.html'>DASH BORD</a>
+  <a class='l' href='#'>WordPress Items</a>
   <i class='dot'></i>
-  <a class='l' href='https://ezees.github.io/egdoobot.github.io/member.html'>Member form</a>
+  <a class='l' href='#'>Looking for Widgets?</a>
 </div>
 </div>
 </div>
@@ -1080,150 +1097,11 @@ A trusted platform
 <div class="container-image">
     <div class="image-grid">
     	
-<div class="image-item" data-id="milyon88" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" data-destination="https://www.milyon88.games/?mid=mrtong">  <img class="visible" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" onclick="openPopup(this)">         </div>	
-    	
 
-<div class="image-item" data-id="8k8" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&usqp=CAU" data-destination="https://8k8app11.com/">
- <img class="visible" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&usqp=CAU" onclick="openPopup(this)">
-    </div>
-
-<div class="image-item" data-id="" data-image="https://download.ocms.cloud/v2/jln/Picture.3?version=3" data-destination=""><img class="visible" src="https://download.ocms.cloud/v2/jln/Picture.3?version=3" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="we1win" data-image="https://images.11029984.com/wsd-images-prod/we1winphf3/merchant_resource/appdownloadicon/wps_APP_Icon_(3)_20231208172453.png" data-destination="http://www.we1winphp3.com/?r=svh0886"><img class="visible" src="https://images.11029984.com/wsd-images-prod/we1winphf3/merchant_resource/appdownloadicon/wps_APP_Icon_(3)_20231208172453.png" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="234win" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" data-destination=""><img class="visible" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="cg777" data-image="https://xbjili.com/img/cg777.webp" data-destination=""><img class="visible" src="https://xbjili.com/img/cg777.webp" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="okebet" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" data-destination=""><img class="visible" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="swertyt99" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&usq" data-destination="https://www.swerte99.app/?mid=mrtong"><img class="visible" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&usq" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="phcity" data-image="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" data-destination=""><img class="visible" src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="jilibet" data-image="https://jilibetph.com/wp-content/uploads/2024/01/jilibet-1.png" data-destination=""><img class="visible" src="https://jilibetph.com/wp-content/uploads/2024/01/jilibet-1.png" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="inet" data-image="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" data-destination="https://www.int.games/register?referralCode=gcu4208&affiliateCode=zahnh"><img class="visible" src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="plusph" data-image="https://xbjili.com/img/plusph.webp" data-destination=""><img class="visible" src="https://xbjili.com/img/plusph.webp" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-
-
-
-    </div>
-</div>
-
-<noscript><img alt=alt ' class='imgThm' src='imgUrl'/></noscript>
-</a>
-<div class='iFxd'>
-<span class='pV hidden pu-views' data-id=''>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(2.000000, 4.000000)'><path class='svgC' d='M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z'></path><path d='M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z'></path></g></svg>
-</span>
-<span aria-label='Add to favorites' bm-id='' bm-img='' bm-ttl='' bm-url='' class='bM bmPs' role='button'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(4.500000, 2.500000)'><path d='M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z'></path><line class='svgC v' transform='translate(-4.500000, -2.500000)' x1='12' x2='12' y1='6' y2='12'></line><line class='svgC h' transform='translate(-4.500000, -2.500000)' x1='15' x2='9' y1='9' y2='9'></line></g></svg>
-</span>
-</div>
-<div class='blog-admin'>
-<div class='iFxd l'>
-<a aria-label='Edit this post' class='edit' data-text='Edit' href='https://www.blogger.com/' role='button' target='_blank'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(3.500000, 3.500000)'><line class='svgC' x1='9.8352' x2='16.2122' y1='16.0078' y2='16.0078'></line><path d='M12.5578,1.3589 L12.5578,1.3589 C11.2138,0.3509 9.3078,0.6229 8.2998,1.9659 C8.2998,1.9659 3.2868,8.6439 1.5478,10.9609 C-0.1912,13.2789 1.4538,16.1509 1.4538,16.1509 C1.4538,16.1509 4.6978,16.8969 6.4118,14.6119 C8.1268,12.3279 13.1638,5.6169 13.1638,5.6169 C14.1718,4.2739 13.9008,2.3669 12.5578,1.3589 Z'></path><line x1='7.0041' x2='11.8681' y1='3.7114' y2='7.3624'></line></g></svg>
-</a>
-</div>
-</div>
-</div>
-<div class='pCntn'>
-<div class='postHeader'>
-</div>
-<h2 class='postTitle'>
-<a href='' rel='bookmark'> Best Casinos
-</a>
-</h2>
-<div class='postInfo'>
-</div>
-<h2 class='pTtl aTtl sml'>
-<a data-text='' href='' rel='bookmark'>
-SHOW More
-</a>
-</h2>
-<div class='pSnpt'>
-
-</div>
-<div class='pInf pSml'>
-<time class='aTtmp pTtmp pbl' data-text='' datetime='' title=''></time>
-<a aria-label='Show more' class='pJmp' data-text='Keep reading' href=''></a>
-</div>
-<div class="container-image">
-    <div class="image-grid">
-    	
-<div class="image-item" data-id="win999" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="http://win999.126phcash.com/?referralCode=ksa5586">  <img class="visible" src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div>	
-    	
-
-<div class="image-item" data-id="ag777" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" data-destination="https://m.agg779.win/?f=457745">
- <img class="visible" src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">
-        </div>
-
-<div class="image-item" data-id="me777" data-image="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" data-destination="https://www.me777.xyz/m/register?r=kep6590">
- <img class="visible" src="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" onclick="openPopup(this)">
-        </div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-<div class="image-item" data-id="" data-image="" data-destination=""><img class="visible" src="" onclick="openPopup(this)"></div>
-
-   
-        
-    </div>
-</div>
-
-
-<div class="popup-container" id="popup-container">
-   
-    <!-- Popup content will be injected dynamically -->
-</div>
-</div>
-</article>
-
-
-
-<article class='ntry jScrl'>
-<div class='pThmb'>
-<a class='thmb' href='https://ezees.github.io/egdoobot.github.io'>
-<img alt='' class='imgThumb lazy' data-src='https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uC0mLLBzXhctHaGe1D3yMr-twpDP47XyFRfShdElOIHiuGHCXfyOqOJ_m8RLVFPDbtq2kk2CHF6L8Yv5VmBN5rGwEb9C1_0m5V-uykys-TzjAOEbfXtVFghEgN1VqExhfaWFgX2X7KiRxOWJJhegj9QRiu7xV927uieC2mBKL1Rh2y1GLkoA=w600-h337-p-k-no-nu' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='/>
-</a>
-</div>
-<div class='pCntn'>
-<div class='postHeader'>
-</div>
-<h2 class='postTitle'>
-<a href='' rel='bookmark'>TOP Online SLOT
-</a>
-</h2>
-<p class='postEntry snippet'>
-TOP Online SLOT      &#8230;
-</p>
-<div class='postInfo'>
-</div>
-
-
-</div>
 </article>
 
 
 <article class='ntry jScrl'>
-<div class='pThmb'>
-<a class='thmb' href='.html'>
-<img alt='There is no need' class='imgThm lazy' data-src='' src='data:image/png;base64, '/>
-<noscript><img alt='There is no need।' class='imgThm' src=''/></noscript>
-</a>
-<div class='iFxd'>
-<span class='pV hidden pu-views' data-id=''>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(2.000000, 4.000000)'><path class='svgC' d='M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z'></path><path d='M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z'></path></g></svg>
-</span>
-<span aria-label='Add to favorites' bm-id='' bm-img='' bm-ttl='WHY' bm-url='' class='bM bmPs' role='button'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(4.500000, 2.500000)'><path d='M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z'></path><line class='svgC v' transform='translate(-4.500000, -2.500000)' x1='12' x2='12' y1='6' y2='12'></line><line class='svgC h' transform='translate(-4.500000, -2.500000)' x1='15' x2='9' y1='9' y2='9'></line></g></svg>
-</span>
-</div>
-<div class='blog-admin'>
-<div class='iFxd l'>
-<a aria-label='Edit this post' class='edit' data-text='Edit' href='/blog/post/edit/ role='button' target='_blank'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(3.500000, 3.500000)'><line class='svgC' x1='9.8352' x2='16.2122' y1='16.0078' y2='16.0078'></line><path d='M12.5578,1.3589 L12.5578,1.3589 C11.2138,0.3509 9.3078,0.6229 8.2998,1.9659 C8.2998,1.9659 3.2868,8.6439 1.5478,10.9609 C-0.1912,13.2789 1.4538,16.1509 1.4538,16.1509 C1.4538,16.1509 4.6978,16.8969 6.4118,14.6119 C8.1268,12.3279 13.1638,5.6169 13.1638,5.6169 C14.1718,4.2739 13.9008,2.3669 12.5578,1.3589 Z'></path><line x1='7.0041' x2='11.8681' y1='3.7114' y2='7.3624'></line></g></svg>
-</a>
-</div>
-</div>
 </div>
 <div class='pCntn'>
 <div class='pHdr pSml'>
@@ -1241,7 +1119,7 @@ Newly Opened
 SHOW MORE
 </div>
 <div class='pInf pSml'>
-<time class='aTtmp pTtmp pbl' data-text='' datetime='' title=''></time>
+<time class='aTtmp pTtmp pbl' data-text='' datetime='2024-07-09T15:20:00+06:00' title=''></time>
 <a aria-label='Read more' class='pJmp' data-text='Keep reading' href='./Title.html'></a>
 </div>
 <script type='application/ld+json'>
@@ -1334,8 +1212,8 @@ Mobile Friendly
 <div class='pSnpt'> Reviews Mobile Friendly
 </div>
 <div class='pInf pSml'>
-<time class='aTtmp pTtmp pbl' data-text='' datetime='' title=''></time>
-<a aria-label='Read more' class='pJmp' data-text='Keep reading' href='https://ezees.github.io/egdoobot.github.io/home.html'></a>
+<time class='aTtmp pTtmp pbl' data-text='Jul 7, 2024' datetime='2024-07-07T13:56:00+06:00' title='Published: July 7, 2024'></time>
+<a aria-label='Read more' class='pJmp' data-text='Keep reading' href='2024/07/Asurar-fojilot.html'></a>
 </div>
 <script type='application/ld+json'>{""}</script>
 </div>
@@ -1347,91 +1225,283 @@ Mobile Friendly
 <noscript><img alt='ALT' class='imgThm' src='imgURL'/></noscript>
 </a>
 <div class='iFxd'>
-<span class='pV hidden pu-views' data-id=''>
+<span class='pV hidden pu-views' data-id='6920507136991989079'>
 <svg class='line' viewBox='0 0 24 24'><g transform='translate(2.000000, 4.000000)'><path class='svgC' d='M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z'></path><path d='M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z'></path></g></svg>
 </span>
-<span aria-label='Add to favorites' bm-id='ID' bm-img='imgURL' bm-ttl='LABEL' bm-url='https://ezees.github.io/egdoobot.github.io/POST.html' class='bM bmPs' role='button'>
+<span aria-label='Add to favorites' bm-id='ID' bm-img='imgURL' bm-ttl='LABEL' bm-url='https://jawolaray.blogspot.com/POST.html' class='bM bmPs' role='button'>
 <svg class='line' viewBox='0 0 24 24'><g transform='translate(4.500000, 2.500000)'><path d='M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z'></path><line class='svgC v' transform='translate(-4.500000, -2.500000)' x1='12' x2='12' y1='6' y2='12'></line><line class='svgC h' transform='translate(-4.500000, -2.500000)' x1='15' x2='9' y1='9' y2='9'></line></g></svg>
 </span>
 </div>
 <div class='blog-admin'>
 <div class='iFxd l'>
-<a aria-label='Edit this post' class='edit' data-text='Edit' href='https://ezees.github.io/egdoobot.github.io/blog/post/edit/' role='button' target='_blank'>
+<a aria-label='Edit this post' class='edit' data-text='Edit' href='https://www.blogger.com/blog/post/edit/' role='button' target='_blank'>
 <svg class='line' viewBox='0 0 24 24'><g transform='translate(3.500000, 3.500000)'><line class='svgC' x1='9.8352' x2='16.2122' y1='16.0078' y2='16.0078'></line><path d='M12.5578,1.3589 L12.5578,1.3589 C11.2138,0.3509 9.3078,0.6229 8.2998,1.9659 C8.2998,1.9659 3.2868,8.6439 1.5478,10.9609 C-0.1912,13.2789 1.4538,16.1509 1.4538,16.1509 C1.4538,16.1509 4.6978,16.8969 6.4118,14.6119 C8.1268,12.3279 13.1638,5.6169 13.1638,5.6169 C14.1718,4.2739 13.9008,2.3669 12.5578,1.3589 Z'></path><line x1='7.0041' x2='11.8681' y1='3.7114' y2='7.3624'></line></g></svg>
 </a>
 </div>
 </div>
 </div>
-<div class='pCntn'>
-<div class='pHdr pSml'>
-<div class='pLbls' data-text='in'>
 
-<a aria-label='Life style' data-text='Life style' href='search/label/Life%20style.html' rel='tag'>
-</a>
+
+
+ 
+<h4>Time:  
+<script type="text/javascript">
+<!--
+var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+
+if (minutes < 10){
+minutes = "0" + minutes
+}
+document.write(hours + ":" + minutes + " ")
+if(hours > 11){
+document.write("PM")
+} else {
+document.write("AM" + "-DATE" + ":")
+
+}
+
+var month = currentTime.getMonth() + 1
+var day = currentTime.getDate()
+var year = currentTime.getFullYear()
+document.write(month + "/" + day + "/" + year)
+//-->
+</script>
+</h4>
+
+
+<div class="slider-container">
+  <img class="slide-image" src="image1.jpg" alt="image-slider" width="300" height="250" title="image-slider">
 </div>
+
+
+<script>
+let images = ['https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png', 'https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png', 'https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png','https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&usqp=CAU','https://download.ocms.cloud/v2/jln/Picture.3?version=3','https://images.11029984.com/wsd-images-prod/we1winphf3/merchant_resource/appdownloadicon/wps_APP_Icon_(3)_20231208172453.png','https://xbjili.com/img/plusph.webp','https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif', ]; // Add more image URLs here if needed
+let currentIndex = 0;
+let sliderImage = document.querySelector('.slide-image');
+
+function loadNextImage() {
+  sliderImage.src = images[currentIndex];
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+loadNextImage();
+setInterval(loadNextImage, 3000); // Change image every 3 seconds
+</script>
+
+
+
+
+	<div class="container-image-grid">
+    <div class="image-grid">
+    	
+<div class="image-item" data-id="win999" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="http://win999.126phcash.com/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div>
+
+ <div class="image-item" data-id="wk7771" data-image="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg" data-destination="https://www.wk7771.com/register?r=fkq4354"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="jilino1" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" data-destination="https://www.jilino1.online/?mid=mrtong"> <img class="visible"  src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="swerte99" data-image="https://download.ocms.cloud/v2/jln/Picture.3?version=3" data-destination="https://www.swerte99.app/?mid=mrtong"> <img class="visible"  src="https://download.ocms.cloud/v2/jln/Picture.3?version=3"  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="milyon88" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp" data-destination="https://www.milyon88.games/?mid=mrtong"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp"  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="234win" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" data-destination="#"> <img class="visible"  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png"  onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="ezwin" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" data-destination=""> <img class="visible"  src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="ayala2024" data-image="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png" data-destination="https://www.ayala2024.vip/register?r=nvk9258"> <img class="visible"  src="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png"  onclick="openPopup(this)">         </div>
+ 
+ <div class="image-item" data-id="ayala2024" data-image="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png" data-destination="https://www.ayala2024.vip/register?r=nvk9258"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="31phmaya" data-image="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png" data-destination="https://www.31phmaya.com/register?r=brp8163"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="wagi777" data-image="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png" data-destination="https://www.wagi777.online/register?r=mnd3398"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="win888" data-image="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png" data-destination="https://www.win888.pub/?r=plh2453"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="kuyaplay" data-image="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" data-destination="www.kuyaplay168.com/?r=uas4558"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" onclick="openPopup(this)">         </div> 
+		
+  <div class="image-item" data-id="int" data-image="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" data-destination="http://zahnh.int.games/?referralCode=gcu4208"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" onclick="openPopup(this)">         </div> 
+  
+   <div class="image-item" data-id="phcity" data-image="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" data-destination="http://www.phcityvip.cc/?r=hwl0399"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" onclick="openPopup(this)">         </div> 
+  <div class="image-item" data-id="okebet" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" data-destination="https://www.oke888.co/?referral=gg02442"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" onclick="openPopup(this)">         </div> 
+    
+    
+
+
+ <div class="image-item" data-id="8k8" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" data-destination="https://m.8k8app11.com/?f=1743524"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" onclick="openPopup(this)">         </div> 
+	 
+<div class="image-item" data-id="spinsbet" data-image="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" data-destination="https://spinsbet.live/?invite=pilini"> <img class="visible"  src="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="phhalik" data-image="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" data-destination="http://www.11phhalik.com/?referralCode=uqw9943"> <img class="visible"  src="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="plusph" data-image="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" data-destination="http://www.89plusph.vip/?r=yec8148"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="agilaclub" data-image="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" data-destination="http://www.agilaclub.live/?r=ynk7539"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" onclick="openPopup(this)">         </div> 
+
+<div class="image-item" data-id="aceph" data-image="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" data-destination="http://www.91aceph.club/?r=xhu9046"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" onclick="openPopup(this)">         </div>  
+
+
+ <div class="image-item" data-id="ff777" data-image="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" data-destination="http://www.ff777.ph/?r=wmm8712"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" onclick="openPopup(this)">         </div> 
+
+  <div class="image-item" data-id="phcash" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="'http://win999.96phcash.club/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div> 
+				
+            <div class="image-item" data-id="lodislot" data-image="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" data-destination="http://hytj333.lodislot365.com/?referralCode=pey0284"> <img class="visible"  src="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" onclick="openPopup(this)">         </div> 
+                     
+
+					 <div class="image-item" data-id="jilijackpot" data-image="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" data-destination="http://www.jilijackpots.com/?r=auv9280"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" onclick="openPopup(this)">         </div> 
+        
+      
+              <div class="image-item" data-id="me777" data-image="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" data-destination="https://www.me777.xyz/register?r=kep6590"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+<div class="image-item" data-id="bouncingball" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" data-destination="https://www.bouncingball.app?mid=%2FytnZi7eBjZ5tj48HlfPUQ%3D%3D"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+			  </div>  </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<div class="popup-container" id="popup-container">
+   
+    <!-- Popup content will be injected dynamically -->
 </div>
-<h2 class='pTtl aTtl sml'>
-<a data-text='text' href='bot.html' rel='bookmark'>
-bookmark
-</a>
-</h2>
-<div class='pSnpt'>
-div class
-</div>
-<div class='pInf pSml'>
-<time class='aTtmp pTtmp pbl' data-text='Jun 5, 2024' datetime='' title=''></time>
-<a aria-label='Read more' class='pJmp' data-text='Keep reading' href='list.html'></a>
-</div>
-<script type='application/ld+json'>{''}</script>
-</div>
+
 </article>
-<article class='ntry jScrl'>
-<div class='pThmb'>
-<a class='thmb' href='https://ezees.github.io/egdoobot.github.io/Protibeshi.html'>
-<img alt='alt' class='imgThm lazy' data-src='imgURL' src='data:image/png;base64='/>
-<noscript><img alt='alt' class='imgThm' src='imgURL'/></noscript>
-</a>
-<div class='iFxd'>
-<span class='pV hidden pu-views' data-id=''>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(2.000000, 4.000000)'><path class='svgC' d='M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z'></path><path d='M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z'></path></g></svg>
-</span>
-<span aria-label='Add to favorites' bm-id='Id' bm-img='imgURL' bm-ttl='ttl' bm-url='https://jawolaray.blogspot.com/2024/05/Protibeshi.html' class='bM bmPs' role='button'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(4.500000, 2.500000)'><path d='M7.47024319,0 C1.08324319,0 0.00424318741,0.932 0.00424318741,8.429 C0.00424318741,16.822 -0.152756813,19 1.44324319,19 C3.03824319,19 5.64324319,15.316 7.47024319,15.316 C9.29724319,15.316 11.9022432,19 13.4972432,19 C15.0932432,19 14.9362432,16.822 14.9362432,8.429 C14.9362432,0.932 13.8572432,0 7.47024319,0 Z'></path><line class='svgC v' transform='translate(-4.500000, -2.500000)' x1='12' x2='12' y1='6' y2='12'></line><line class='svgC h' transform='translate(-4.500000, -2.500000)' x1='15' x2='9' y1='9' y2='9'></line></g></svg>
-</span>
-</div>
-<div class='blog-admin'>
-<div class='iFxd l'>
-<a aria-label='Edit this post' class='edit' data-text='Edit' href='https://ezees.github.io/egdoobot.github.io/blog/post/edit/' role='button' target='_blank'>
-<svg class='line' viewBox='0 0 24 24'><g transform='translate(3.500000, 3.500000)'><line class='svgC' x1='9.8352' x2='16.2122' y1='16.0078' y2='16.0078'></line><path d='M12.5578,1.3589 L12.5578,1.3589 C11.2138,0.3509 9.3078,0.6229 8.2998,1.9659 C8.2998,1.9659 3.2868,8.6439 1.5478,10.9609 C-0.1912,13.2789 1.4538,16.1509 1.4538,16.1509 C1.4538,16.1509 4.6978,16.8969 6.4118,14.6119 C8.1268,12.3279 13.1638,5.6169 13.1638,5.6169 C14.1718,4.2739 13.9008,2.3669 12.5578,1.3589 Z'></path><line x1='7.0041' x2='11.8681' y1='3.7114' y2='7.3624'></line></g></svg>
-</a>
-</div>
-</div>
-</div>
-<div class='pCntn'>
-<div class='pHdr pSml'>
-<div class='pLbls' data-text='in'>
-<a aria-label='Browse Complains' data-text='Browse Complains' href='search/label/browse-complains.html' rel='tag'>
-</a>
-<a aria-label='Life style' data-text='Life style' href='search/label/Lifestyle.html' rel='tag'>
-</a>
-</div>
-</div>
-<h2 class='pTtl aTtl sml'>
-<a data-text='TEXT' href='2024/05/Protibeshi.html' rel='bookmark'>
-BOOKMARK
-</a>
-</h2>
-<div class='pSnpt'>
-DIV CLASS
-</div>
-<div class='pInf pSml'>
-<time class='aTtmp pTtmp pbl' data-text='May 24, 2024' datetime='2024-05-24T07:21:00+06:00' title='Published: May 24, 2024'></time>
-<a aria-label='Read more' class='pJmp' data-text='Keep reading' href='https://ezees.github.io/egdoobot.github.io/Protibeshi.html'></a>
-</div>
-<script type='application/ld+json'>{"}</script>
-</div>
-</article>
-</div>
+
+      <aside id='sidebar-wrapper'>
+        <b:section class='sidebar gpl-astra-section' id='sidebar' name='Sidebar' showaddelement='yes'>
+          <b:widget id='HTML10' locked='false' title='Menu' type='HTML' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'/>
+            </b:widget-settings>
+            <b:includable id='main'>
+      <b:include name='html-content'/>
+    </b:includable>
+          </b:widget>
+          <b:widget id='HTML7' locked='false' title='zenwo_app' type='HTML' visible='false'>
+            <b:widget-settings>
+              <b:widget-setting name='content'>
+			  <![CDATA[<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+
+
+<!--body class="" style="visibility: hidden;"-->
+
+<section id="top_sect" class="second">
+    <button id="main_btn" onclick="zenwo_app.sendMessage('');">Send «Hello, World!»</button>
+    <button id="with_webview_btn" onclick="zenwo_app.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
+    <button id="data_btn" onclick="zenwo_app.sendTime(true);">Send current time to bot (x10)</button>
+    <button onclick="zenwo_app.expand();">Expand Webview</button>
+    <button onclick="zenwo_app.toggleMainButton(this);">Hide Main Button</button>
+    <input type="text" placeholder="Input text in regular input..." id="regular_field"/>
+    <div
+            class="input"
+            contenteditable="true"
+            data-placeholder="Input text in contenteditable field..."
+            id="text_field"
+    >
+    <div id="peer_wrap" style="display:none">
+        <img id="peer_photo" class="chat_img" src="" />
+        <span id="peer_name"></span>
+    </div>
+    <div class="sect_row">Header: <select id="header_color_sel">
+        <option value="bg_color" selected />bg_color
+        <option value="secondary_bg_color" />secondary_bg_color
+    </select></div>
+    <div class="sect_row">Background: <input type="color" id="bg_color_input"/> <select id="bg_color_sel">
+        <option value="bg_color" selected />bg_color
+        <option value="secondary_bg_color" />secondary_bg_color
+        <option value="custom" id="bg_color_val" />custom...
+    </select></div>
+</div
+></section>
+<section>
+    <div id="btn_status" class="hint" style="display: none;">
+    </div>
+    <p>Test links:</p>
+    <ul>
+        <li><a id="regular_link" href="https://zen-jawolaray.blogspot.com">Regular link #2</a> (opens inside webview)</li>
+        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
+        <li><a href="javascript:window.open('https://zen-jawolaray.blogspot.com/');">window.open() link</a> (opens outside webview)</li>
+        <li><a href="http://t.me/zenwo_bot">zenwo_bot t.me link</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/zenwo_app');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
+        
+        
+        zenwo_app]( t.me/zenwo_bot/zenwo_app )
+        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
+        <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
+    </ul>
+    <p>Test permissions:</p>
+    <ul>
+        <li><a href="javascript:;" onclick="return zenwo_app.requestLocation(this);">Request Location</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return zenwo_app.requestVideo(this);">Request Video</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return zenwo_app.requestAudio(this);">Request Audio</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return zenwo_app.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
+        <li><a href="javascript:;" onclick="return zenwo_app.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
+    </ul>
+    <p>Test alerts:</p>
+    <div class="columns">
+        <ul>
+            <li><a href="javascript:;" onclick="alert('Hello!');">alert</a></li>
+            <li><a href="javascript:;" onclick="confirm('Are you sure?');">confirm</a></li>
+            <li><a href="javascript:;" onclick="prompt('How old are you?');">prompt</a></li>
+        </ul>
+        <ul>
+            <li><a href="javascript:;" onclick="zenwo_app.showAlert('Hello!');">showAlert</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.showConfirm('Are you sure?');">showConfirm</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.requestWriteAccess();">requestWriteAccess</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.requestContact();">requestContact</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.showPopup();">showPopup</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.showScanQrPopup();">showScanQrPopup</a></li>
+            <li><a href="javascript:;" onclick="zenwo_app.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
+        </ul>
+    </div>
+    <p>Haptics:</p>
+    <ul>
+        <li>Impact: <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('heavy');">heavy</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('light');">light</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('medium');">medium</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('rigid');">rigid</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('soft');">soft</a><br /><br /></li>
+        <li>Notification: <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('error');">error</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('success');">success</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('warning');">warning</a><br /><br /></li>
+        <li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br /><br /></li>
+    </ul>
+    <pre><code id="webview_data"></code></pre>
+    <div class="hint">
+        Data passed to webview.
+        <span id="webview_data_status" class="status_need">Checking hash...</span>
+    </div>
+    <pre><code id="theme_data"></code></pre>
+    <div class="hint">
+        Theme params
+    </div>
+    <div class="hint">
+        Version: <span id="ver"></span>,
+        platform: <span id="platform"></span>
+    </div>
+
+			  
+	
+
+          </b:widget>
+
+        </b:section>
+      </aside>
+	  </div>
+
+	  
 <div class='blogPg jScrl' id='blogPager'>
 <div class='nwLnk nPst' data-text='Newest'>
 <svg class='line' viewBox='0 0 24 24'><g transform='translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(5.500000, 4.000000)'><line x1='6.7743' x2='6.7743' y1='15.7501' y2='0.7501'></line><path d='M12.7988,9.6998 C12.7988,9.6998 9.5378,15.7498 6.7758,15.7498 C4.0118,15.7498 0.7498,9.6998 0.7498,9.6998'></path></g></svg>
@@ -1659,8 +1729,8 @@ Support
 <div class='widget-content'>
 <ul>
 <li>
-<a href='openpopup.html'>
-<span>Open Popup</span>
+<a href='disclaimers.html'>
+<span>Disclaimer</span>
 </a>
 </li>
 <li>
