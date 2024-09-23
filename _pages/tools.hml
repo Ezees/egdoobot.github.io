@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>MrTong Dabord</title>
+  <!-- Description: A standard style sheet that sets background and font properties
+Browsers: 
+Additional Information: Replace Your Title Here with your preferred page title. Replace hex codes (i.e. #000000, #FFFFFF, etc.) with hex codes of desired colors. Replace center with preferred text alignment. Replace given font properties with desired font properties (size, weight, and family). If you prefer to use an image as a background instead of a solid color, replace
+
+body { 
+  background: #000000;
+  text-align: center;
+}
+
+with
+
+body { background: url(yourpicture.png) }
+
+In this case, replace yourpicture.png with the image you want to display. -->
+
+
+
+<style type="text/css">
+body {
+  background: #000000;
+  text-align: center;
+}
+
+p {
+  background: #FF0000;
+}
+
+h1 {
+  background: #0000A0;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18pt;
+  font-family: Arial;
+}
+
+h2 {
+  background: #FFFF00;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30pt;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #FFFFFF;
+  font-size: 16pt;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+h3 {
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20pt;
+  font-family: Arial, sans-serif;
+  
+}
+
+
+.rounded-corners
+{
+  background-color:lightgrey;
+  width:250px;
+  height:125px;
+  padding:10px;
+
+  border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -khtml-border-radius: 10px 10px 10px 10px;
+}
+
+
+.darkshadow
+{
+   background-color: #ddd;
+   width: 300px;
+   padding: 10px;
+   
+   box-shadow: 10px 10px 15px #000;
+   -webkit-box-shadow: 10px 10px 15px #000;
+   -moz-box-shadow: 10px 10px 15px #000;
+}
+
+.lightshadow
+{  
+   background-color: #999;
+   width: 200px;
+   padding: 10px;
+   color: #fff;
+   
+   box-shadow: 4px 4px 2px #ffc;
+   -webkit-box-shadow: 4px 4px 2px #ffc;
+   -moz-box-shadow: 4px 4px 2px #ffc;
+} 
+
+.innershadow
+{  
+   background-color: #fff;
+   width: 200px;
+   padding: 10px;
+
+   -moz-box-shadow: inset 0 0 1em gold;
+   -webkit-box-shadow: inset 0 0 1em gold;
+   box-shadow: inset 0 0 1em gold;
+}
+
+
+
+        .btn-note {
+            margin: 5px;
+            color: Write;
+            background-color: green;
+        }
+        
+        .text-noteArea {
+            width: 100%;
+            height: 150px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+		
+.btn-login {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+
+.image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 2px;
+        }
+        
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            transition: transform 0.2s;
+        }
+        .image-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            position: relative;
+            background: #fff;
+            padding: 5px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            color: red;
+        }
+ 
+ 
+
+ .visible {
+      	width: 100px; 
+      	height: 100px; 
+      	margin: 10px;
+       }
+       
+
+
+.popup {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.popup-container {
+    display: none;                /* Using flexbox for alignment */
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center items horizontally */
+    justify-content: center;      /* Center items vertically */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    border: 2px solid #000;      /* Border styling */
+    border-radius: 10px;         /* Rounded corners */
+    padding: 20px;               /* Padding around content */
+    width: 300px;                /* Set a width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+h2 {
+    font-size: 24px;             /* Font size for the header */
+    color: #333;                 /* Text color */
+    margin: 0 0 15px 0;         /* Margin around the header */
+    text-align: center;          /* Center the text */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .popup-container {
+        width: 90%;              /* Mobile-friendly width */
+    }
+
+    h2 {
+        font-size: 20px;        /* Adjust font size for mobile */
+    }
+}
+
+
+  
+    </style>
+	<link rel="stylesheet" type="text/css" href="css/myelements.css"/> 
+    <script>
+    function sendMessage() {
+      const message = document.getElementById('message').value;
+      const token = '6950119583:AAHraSUyVVVpfSajylMw_-ljNDSnKJVoyKo';
+      const chatId = 5450168222; // Replace with the user's chat ID
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            alert('Message sent successfully!');
+          } else {
+            alert('Failed to send message. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error sending message:', error);
+          alert('An error occurred while sending the message.');
+        });
+    }
+	
+	
+  </script>
+      <script>
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+    
+    
+</head>
+<body>
+<div class="separator" style="color: green; position: center;
+    top: 0px;
+    right: 50%;
+    cursor: pointer;
+    font-size: 10px;
+  align-items: center;">
+ <h1>Tools By: MrTong</h1> 
+ 
+</div>
+
+
+
+
+
+
+
+   
+	<button onclick="refreshPage()">Refresh</button></div> 
+
+    
+  <div clss="search-container"><input type="text" placeholder="Input text in regular input..." id="search">
+    <button type="button" id="searchButton">Search Open browser </button>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('search').value;
+            const url = query ? `https://www.google.com/search?q=${encodeURIComponent(query)}` : 'https://google.com/';
+            window.open(url, '_blank'); // Opens in a new tab
+        });
+  </script>
+
+</div>
+
+
+
+
+    <!-- ========
+    
+    
+    
+    
+    ===-->
+
+  
+      <img id="gravatar-image" class='profile-img' expr:alt='data:messages.myPhoto' expr:src='resizeImage(data:authorPhoto.image, 45, &quot;1:1&quot;)'/>
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', () => {
+        // Step 1: Hash your email address using SHA-256.
+        const hashedEmail = CryptoJS.SHA256( 'wertylaray@gmail.com' );
+        // Step 2: Construct the Gravatar URL.
+        const gravatarUrl = `https://www.gravatar.com/avatar/${hashedEmail}`;
+        // Step 3: Set the image source to the Gravatar URL.
+        document.getElementById( 'gravatar-image' ).src = gravatarUrl;
+    } );
+</script>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js</a>
+  
+<div class="container-image">
+    <div class="image-grid">
+        <div class="image-item" data-id="gravatar-image" data-image="https://1.gravatar.com/avatar/65fffc6c3831848842af5859512d655faaf2b8ca8789ba3a44e63faea1bac2d5?size=256" data-destination="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
+            <img class="visible" src="https://1.gravatar.com/avatar/65fffc6c3831848842af5859512d655faaf2b8ca8789ba3a44e63faea1bac2d5?size=256" onclick="openPopup(this)">
+        </div>
+
+    </div>
+</div>
+
+<div class="name">YOU can DO it</div> 
+
+
+<h1>Cool</h1>
+<p>colors and fonts</p>
+<h2>and neat style sheet stuff.</h2>
+We really like it!
+<h3>And we hope you do, too!</h3>
+<div class="popup-container" id="popup-container">
+    <!-- Popup content will be injected dynamically -->
+</div>
+
+   <h1>Image Downloader</h1>
+    <input type="text" id="imageLink" placeholder="Enter Image URL">
+    <button onclick="loadImage()">View Image</button>
+    <br><br>
+    <img id="displayedImage" style="display:none; max-width: 100px; max-height: 100px;">
+    <br>
+    <a id="downloadLink" style="display:none;">Download</a>
+
+    <script>
+        function loadImage() {
+            const imageUrl = document.getElementById('imageLink').value;
+            const img = document.getElementById('displayedImage');
+            img.src = imageUrl;
+            img.style.display = 'block';
+            
+            // Show download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.style.display = 'block';
+            downloadLink.onclick = function () {
+                downloadImage(imageUrl);
+            };
+            downloadLink.textContent = 'Download Image';
+        }
+
+        function downloadImage(url) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.src = url;
+
+            img.onload = function() {
+                canvas.width = 100; // Set canvas to 100x100
+                canvas.height = 100;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                // Create a link to download
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = '${imageName}.png';
+                link.click();
+            };
+        }
+    </script>
+
+
+<div class="markdown-container" data-document>
+  <h1 id="oldfereral">Note List</h1>
+<p>  <input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" /></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" /><a href=""> </a></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" readonly="readonly" />
+<a href=""></a></li>
+</ul>
+  </div>
+  
+  
+  
+  <div class="btn-container">
+ <button onclick="window.open('https://ezees.github.io/html-template.github.io/')">Html Teamplate</button>
+ <button onclick="window.open('https://www.blogger.com/')">blogger.com</button>
+ <button onclick="window.open('https://zen-jawolaray.blogspot.com/')">zen-jawolaray</button>
+ <button onclick="window.open('https://jawo-laray.blogspot.com/')">jawo-laray</button>
+ <button onclick="window.open('https://jawolaray.blogspot.com/')">jawolaray</button>
+ <button onclick="window.open('https://ezees.github.io/mrtong.github.io')">mrtong.io</button>
+ <button onclick="window.open('https://jawo-laray.blogspot.com/')">️PhPageGame  </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button> <button onclick="window.open('')">️🐱 </button>
+  </div>
+  
+  <div>   </div>
+  
+  <a href="https://github.com/Ezees/egdoobot.github.io/tree/07b9d3f8c19964390c48b57ddbed104b97382e42"><p>github</p></a> 
+     <a href="https://www.blogger.com/"><p>blogger.com</p></a>   <h1>Send Message to Bot</h1>
+     
+   <div class="bot-contanir" id="sendMessage">
+   	  <label for="message">Message:</label>
+  <input type="text" id="message" placeholder="Enter your message">
+  
+  <button onclick="sendMessage()">Send Message</button>
+  <br><br>
+   </div>
+<div class="note-container" id="Notebook">
+    <h1>Simple Notebook</h1>
+    <textarea class="text-noteArea" id="noteArea" placeholder="Write your note here..."></textarea>
+    <br>
+ <button class="btn-note" onclick="saveNote()">Save</button>
+    <button class="btn-note" onclick="deleteNote()">Delete</button>
+    <button class="btn-note" onclick="previewNote()">Preview</button>
+    <button class="btn-note" onclick="shareNote()">Share</button>
+
+    <h2>Your Notes:</h2>
+    <div id="notesList"></div>
+</div>
+  
+<div class="container-add-img">
+    <label for="image-upload">Click to Upload Image:</label>
+    <input type="file" id="image-upload" accept="image/*"><span>No file chosen</span><br><br>
+
+    <label for="image-link">Image Link:</label>
+    <input type="text" id="image-link"><br><br>
+    
+    <label for="popup-id">Popup ID:</label>
+    <input type="text" id="popup-id"><br><br>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination"><br><br>
+
+    <button id="add-content">Add Content</button>
+    <button id="show-code">SHOW THE CODE</button>
+    <button id="copy-html">Copy HTML Code</button>
+
+    <h2>Preview:</h2>
+    <div id="preview"></div>
+
+
+
+ <div class="code-preview-container" id="Preview-container">
+    <h1>Code Preview</h1>
+    <textarea class="text-codeArea" id="code-preview" placeholder="code-preview here..." rows="10" cols="50"></textarea>
+    <br>
+    <button id="preview-button">Preview Code</button>
+    <div class="preview-output" id="preview-output"></div>
+</div>
+
+
+
+
+ 
+<button id="sharePost" onclick="opensharePostLink()">Share</button>
+
+<script>
+  function sharePost() {
+   var postUrl = window.location.href;
+        
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(postUrl), 'Share on Facebook', 'width=600,height=400');
+        
+        // Add similar lines for other social media platforms like Twitter, LinkedIn, etc.
+  
+    }
+  </script>
+    
+
+
+
+
+
+
+
+
+
+
+<div class='title_section_container'>
+    <div class='border line'></div>
+    <div class='title_txt' id="latest-results">Loading...</div>
+</div>
+
+<script type='text/javascript'>
+    var tampil = 6;
+    var showpostsummary = true;
+    var numchars = 6;
+    var titlenumchars = 35;
+
+    // Callback function to handle the JSON data
+    function mycallback(data) {
+        // Sample processing; you might want to adjust based on actual data structure
+        var resultsCount = data.feed.entry.length; // Count the number of posts
+        var latestCount = Math.min(resultsCount, tampil); // Limit to 'tampil'
+
+        // Construct the title text
+        var titleText = `<strong>${latestCount}</strong>k<br/><span>.See the latest Superior Online Casino</span>`;
+        
+        // Update the title text in the HTML
+        document.getElementById("latest-results").innerHTML = titleText;
+    }
+</script>
+
+<script type="text/javascript" src=""></script>
+
+
+
+<script>
+    document.getElementById('preview-button').addEventListener('click', function() {
+        const code = document.getElementById('code-preview').value;
+        const previewOutput = document.getElementById('preview-output');
+        
+        // Safely render code as HTML by escaping HTML characters
+        const escapedCode = escapeHtml(code);
+        
+        previewOutput.innerHTML = escapedCode;
+    });
+
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+</script>
+
+<style>
+    .code-preview-container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .text-codeArea {
+        width: 100%;
+        height: 200px;
+        font-family: monospace;
+    }
+
+    #preview-output {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow: auto;
+        white-space: pre-wrap; /* Ensures that the formatting is preserved */
+        background-color: #f9f9f9;
+    }
+</style>
+
+<script>
+    document.getElementById('add-content').onclick = function () {
+        const imageUrl = document.getElementById('image-link').value;
+        const popupId = document.getElementById('popup-id').value;
+        const destination = document.getElementById('destination').value;
+
+        const code = `
+
+<div class="image-item" data-id="${popupId}" data-image="${imageUrl}" data-destination="${destination}">
+ <img class="visible" src="${imageUrl}" onclick="openPopup(this)">
+        </div>
+
+`;
+
+        document.getElementById('preview').innerHTML = `<img src="${imageUrl}" onclick="openPopup('${popupId}')" class="visible">`;
+        document.getElementById('code-preview').textContent = code;
+    };
+
+    document.getElementById('show-code').onclick = function () {
+        alert(document.getElementById('code-preview').textContent);
+    };
+
+    document.getElementById('copy-html').onclick = function () {
+        navigator.clipboard.writeText(document.getElementById('code-preview').textContent)
+            .then(() => {
+                alert('HTML code copied to clipboard');
+            });
+    };
+
+    
+</script>
+
+<script type="text/javascript">    
+        const notes = [];
+
+        function saveNote() {
+            const noteArea = document.getElementById("noteArea");
+            const noteText = noteArea.value.trim();
+            if (noteText) {
+                notes.push(noteText);
+                noteArea.value = ''; // Clear the area
+                displayNotes();
+            }
+        }
+
+        function deleteNote() {
+            const noteArea = document.getElementById("noteArea");
+            noteArea.value = ''; // Clear the area
+        }
+
+        function previewNote() {
+            const noteArea = document.getElementById("noteArea");
+            alert(noteArea.value); // Preview the current note
+        }
+
+        function shareNote() {
+            const noteArea = document.getElementById("noteArea");
+            const noteText = noteArea.value.trim();
+            if (noteText) {
+                const shareableLink = encodeURIComponent(noteText);
+                alert(`Share this link: ${window.location.href}?note=${shareableLink}`);
+            }
+        }
+
+        function displayNotes() {
+            const notesList = document.getElementById("notesList");
+            notesList.innerHTML = notes.map(note => `<p>${note}</p>`).join('');
+        }
+    
+    </script>
+
+
+<script>
+
+function openPopup(img) {
+    const item = img.parentElement;
+    const popupId = item.getAttribute('data-id');
+    const image = item.getAttribute('data-image');
+    const destination = item.getAttribute('data-destination');
+
+    const popupContent = `
+        <div class="popup" id="${popupId}">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('${popupId}')">X</span>
+                <h2>Hello world</h2>
+                <img class="featured-item" src="${image}">
+                <button onclick="window.open('${destination}')">Quick View</button>
+            </div>
+        </div>
+    `;
+
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.innerHTML = popupContent;
+    popupContainer.style.display = 'flex'; // Show popup
+}
+
+function closePopup(popupId) {
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.style.display = 'none'; // Hide popup
+    popupContainer.innerHTML = ''; // Clear the content
+}
+
+</script>
+<script>
+
+function destination(url) {
+    const popupContainer = document.getElementById('popup-container');
+    const popupImage = document.getElementById('popup-image');
+    const popupDestination = document.getElementById('popup-destination');
+
+    popupImage.src = img.parentElement.dataset.image;
+    popupDestination.textContent = img.parentElement.dataset.destination;
+    popupContainer.style.display = 'flex';
+}
+
+
+</script>
+
+
+
+    <script>
+        function loadImage() {
+            const imageUrl = document.getElementById('imageLink').value;
+            const img = document.getElementById('displayedImage');
+            img.src = imageUrl;
+            img.style.display = 'block';
+            
+            // Show download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.style.display = 'block';
+            downloadLink.onclick = function () {
+                downloadImage(imageUrl);
+            };
+            downloadLink.textContent = 'Download Image';
+        }
+
+        function downloadImage(url) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.src = url;
+
+            img.onload = function() {
+                canvas.width = 100; // Set canvas to 100x100
+                canvas.height = 100;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                // Create a link to download
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'downloaded-image.png';
+                link.click();
+            };
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
