@@ -504,15 +504,14 @@ const blogUrl='../index.html';const blogID='5662208180631952765';const postID=''
 </div>
 <!--[ Header widget ]-->
 <div class='headN section' id='header-title'><div class='widget Header' data-version='2' id='Header1'>
-<a href='../index.html'><img alt='linkgeneratortool' height='31' src='https://blogger.googleusercontent.com/img/a/AVvXsEj1WIRkuNRqf1BJdQhBiy9vuc1BWiXe-rj40CIUgsMveaJ3q-HzhsbMU0CqxdozyvjuCkE-bHCgwbLOXS5fz50zaZa3DlrpMxbMYs8kAEK3XzvvyExDTTl_rEu02l0kFCdJHI3XaMdylVWRMua-u9FOZdlWxUNK9vbTL-zhcZFC6iTGMnh0Lwu3WdX0RRdH=s150' width='140'/>         </a>
+<a href='#slots'><img alt='' height='31' src='https://blogger.googleusercontent.com/img/a/AVvXsEj1WIRkuNRqf1BJdQhBiy9vuc1BWiXe-rj40CIUgsMveaJ3q-HzhsbMU0CqxdozyvjuCkE-bHCgwbLOXS5fz50zaZa3DlrpMxbMYs8kAEK3XzvvyExDTTl_rEu02l0kFCdJHI3XaMdylVWRMua-u9FOZdlWxUNK9vbTL-zhcZFC6iTGMnh0Lwu3WdX0RRdH=s150' width='140'/>         </a>
 <div class='headInnr hidden'>
 <h2 class='headH notranslate hasSub'>
 <bdi>
-<a class='headTtl' href='../index.html'>
-linkgeneratortool
+<a class='headTtl' href='#'>
 </a>
 </bdi>
-<span class='headSub' data-text='A trusted platform of Education-Culture &amp; News and Islamic Matters And online trip&#39;s '>
+<span class='headSub' data-text='A trusted platform  '>
 </span>
 </h2>
 </div>
@@ -988,225 +987,461 @@ COSTTOMIZE TELEGRAM BOT
     </div>
 </section>
 
+
 <section>
-    <div id="btn_status" class="hint" style="display: none;"></div>
-
-    <p>Test links:</p>
-    <ul>
-        <li><a id="regular_link" href="?nextpage=1">Regular link #1</a> (opens inside webview)</li>
-        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
-        <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
-        <li><a href="https://t.me/casinodirecBot/eze">t.me/casinodirecBot</a> (opens inside Telegram app)</li>
-        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
-        <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
-        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/casinodirecBot/eze/menu');">web_app_open_tg_link(webapp_direct_link)</a> (opens with confirm for the first time, then without)</li>
-    </ul>
-    <ul>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegram.org',{try_browser:'chrome'});">telegram.org</a> (opens in Chrome)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegram.org',{try_browser:'firefox'});">telegram.org</a> (opens in Firefox)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegram.org',{try_browser:'safari'});">telegram.org</a> (opens in Safari)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegram.org',{try_browser:'opera'});">telegram.org</a> (opens in Opera)</li>
-        <li><a href="javascript:Telegram.WebApp.close({return_back:true});">Return back</a> (Android only)</li>
-    </ul>
 	
-	
-	
-	</Section>
-	<h1>Image Downloader</h1>
-    <input type="text" id="imageLink" placeholder="Enter Image URL">
-    <button onclick="loadImage()">View Image</button>
-    <br><br>
-    <img id="displayedImage" style="display:none; max-width: 100px; max-height: 100px;">
-    <br>
-    <a id="downloadLink" style="display:none;">Download</a>
-
-    <script>
-        function loadImage() {
-            const imageUrl = document.getElementById('imageLink').value;
-            const img = document.getElementById('displayedImage');
-            img.src = imageUrl;
-            img.style.display = 'block';
-            
-            // Show download link
-            const downloadLink = document.getElementById('downloadLink');
-            downloadLink.style.display = 'block';
-            downloadLink.onclick = function () {
-                downloadImage(imageUrl);
-            };
-            downloadLink.textContent = 'Download Image';
+	  <style>
+        .container-image-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-
-        function downloadImage(url) {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const img = new Image();
-            img.crossOrigin = "Anonymous";
-            img.src = url;
-
-            img.onload = function() {
-                canvas.width = 100; // Set canvas to 100x100
-                canvas.height = 100;
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                
-                // Create a link to download
-                const link = document.createElement('a');
-                link.href = canvas.toDataURL('image/png');
-                link.download = '${imageName}.png';
-                link.click();
-            };
+        .image-item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 5px;
         }
-    </script>
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .image-item img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        
+        
+     
+        .popup-content img{
+            position: relative;
+            background: #fff;
+            padding: 5px;
+            border-radius: 30px;
+            text-align: center;
+            height: 150px;
+            width: 200px;
+        }
+        
+        
+      .close {
+      	color: red;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}  
+
+        
+        
+        
+        /* General styles for the popup */
+.popup-container {
+    display: none; /* Hide by default */
+    position: fixed; /* Fixed positioning */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Translate to the center */
+    width: 80%; /* Width of the popup */
+    max-width: 500px; /* Maximum width */
+    background-color: white; /* Background color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1000; /* On top of other elements */
+}
+
+/* Overlay style for the background */
+.overlay {
+    display: none; /* Hide by default */
+    position: fixed; /* Cover the entire viewport */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: 999; /* Below the popup */
+}
+
+/* Show the popup and overlay when active */
+/*.show {
+    display: block; /* Show the popup */
+/*
+/*.show-overlay {
+    display: block; /* Show the overlay */
+}
 
 
-	
-	<p>Test permissions:</p>
 
-<div class="columns">
-    <ul>
-        <li><a href="javascript:;" onclick="return eze.requestLocation(this);">Request Location</a> <span></span></li>
-        <li><a href="javascript:;" onclick="return eze.requestVideo(this);">Request Video</a> <span></span></li>
-        <li><a href="javascript:;" onclick="return eze.requestAudio(this);">Request Audio</a> <span></span></li>
-        <li><a href="javascript:;" onclick="return eze.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
-        <li><a href="javascript:;" onclick="return eze.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
-    </ul>
-    <ul>
-        <li><a href="javascript:;" onclick="return eze.requestWriteAccess(this);">Request write access</a> <span></span></li>
-        <li><a href="javascript:;" onclick="return eze.requestPhoneNumber(this);">Request phone number</a> <span></span><br><br></li>
-        <li><a href="javascript:;" onclick="return eze.requestServerTime(this);">Request server time</a> <span></span></li>
-    </ul>
-	
-	
+/*      */
+
+
+.popup-container {
+    display: flex;                /* Using flexbox for alignment */
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center items horizontally */
+    justify-content: center;      /* Center items vertically */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    border: 2px solid #000;      /* Border styling */
+    border-radius: 10px;         /* Rounded corners */
+    padding: 20px;               /* Padding around content */
+    width: 300px;                /* Set a width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+h2 {
+    font-size: 24px;             /* Font size for the header */
+    color: #333;                 /* Text color */
+    margin: 0 0 15px 0;         /* Margin around the header */
+    text-align: center;          /* Center the text */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .popup-container {
+        width: 90%;              /* Mobile-friendly width */
+    }
+
+    h2 {
+        font-size: 20px;        /* Adjust font size for mobile */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container-image-grid">
+    <div class="image-item-grid">
+
+<div class="image-item" data-id="maswerte" data-image="https://www.maswerte.net/m/icons/icon-192x192.png" data-destination="http://www.maswerte.net/?r=hfu1105">
+ <img class="visible" src="https://www.maswerte.net/m/icons/icon-192x192.png" onclick="openPopup(this)">
+        </div>
+
+
+
+
+<div class="image-item" data-id="sololife" data-image="https://images.11029984.com/wsd-images-prod/solowinf3/merchant_resource/appdownloadicon/wps_Solowin_black_logo_250250_APP_LOGO_20231217211150.png" data-destination="https://www.sololife.shop/m/home">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/solowinf3/merchant_resource/appdownloadicon/wps_Solowin_black_logo_250250_APP_LOGO_20231217211150.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="cmgph" data-image="https://images.11029984.com/wsd-images-prod/cmgamingf3/merchant_resource/appdownloadicon/wps_CMG_Logo_S_F_ICON_20240208130207.png" data-destination="https://www.cmgph.com/m/home">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/cmgamingf3/merchant_resource/appdownloadicon/wps_CMG_Logo_S_F_ICON_20240208130207.png" onclick="openPopup(this)">
+        </div>
+
+
+<div class="image-item" data-id="filiplay9" data-image="https://www.luxeplay.ph/m/icons/icon-192x192.png" data-destination="http://www.luxeplay.ph/?referralCode=jdq7706">
+ <img class="visible" src="https://www.luxeplay.ph/m/icons/icon-192x192.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="filiplay9" data-image="https://images.6929183.com/wsd-images-prod/filiplayf2/merchant_resource/appdownloadicon/app_download_icon_filiplayf2_20240528225832.jpg" data-destination="http://www.filiplay9.com/?r=bpt4839">
+ <img class="visible" src="https://images.6929183.com/wsd-images-prod/filiplayf2/merchant_resource/appdownloadicon/app_download_icon_filiplayf2_20240528225832.jpg" onclick="openPopup(this)">
+        </div>
+
+
+
+
+<div class="image-item" data-id="goal11" data-image="https://images.3138722.com/wsd-images-prod/goal11phf2/merchant_resource/appdownloadicon/wps_APP-icon_20231022173101.png" data-destination="http://www.goal11.cam/?r=cjv2307">
+ <img class="visible" src="https://images.3138722.com/wsd-images-prod/goal11phf2/merchant_resource/appdownloadicon/wps_APP-icon_20231022173101.png" onclick="openPopup(this)">
+        </div>
+
+
+<div class="image-item" data-id="lago777" data-image="https://images.1248593.com/wsd-images-prod/lago777f4/merchant_resource/appdownloadicon/app_download_icon_lago777f4_20240520110525.png" data-destination="https://www.lago777.net">
+ <img class="visible" src="https://images.1248593.com/wsd-images-prod/lago777f4/merchant_resource/appdownloadicon/app_download_icon_lago777f4_20240520110525.png" onclick="openPopup(this)">
+        </div>
+
+
+
+
+<div class="image-item" data-id="bounty11" data-image="https://images.11029984.com/wsd-images-prod/biuntyf3/merchant_resource/appdownloadicon/wps_%E6%9C%AA%E5%91%BD%E5%90%8D_(225_x_225_%E5%83%8F%E7%B4%A0)_20240120095035.png" data-destination="https://www.bounty11.cc/m/member/home">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/biuntyf3/merchant_resource/appdownloadicon/wps_%E6%9C%AA%E5%91%BD%E5%90%8D_(225_x_225_%E5%83%8F%E7%B4%A0)_20240120095035.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="highrollersclub" data-image="https://images.11029984.com/wsd-images-prod/higfrolf3/merchant_resource/appdownloadicon/wps_app_logo_20231115204940.jpg" data-destination="https://www.highrollersclub.info/m/member/home">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/higfrolf3/merchant_resource/appdownloadicon/wps_app_logo_20231115204940.jpg" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="fortunes" data-image="https://www.fortunesedge.net/m/logo.0b56c658.png" data-destination="https://www.fortunesedge.net/m/home">
+ <img class="visible" src="https://www.fortunesedge.net/m/logo.0b56c658.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="majesty33" data-image="https://images.11029984.com/wsd-images-prod/majestyf3/merchant_resource/appdownloadicon/wps_MAJESTY33_-_Logo__250250_20240312005200.png" data-destination="https://www.majesty33.live">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/majestyf3/merchant_resource/appdownloadicon/wps_MAJESTY33_-_Logo__250250_20240312005200.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="richqueen" data-image="https://images.11029984.com/wsd-images-prod/richqf3/merchant_resource/appdownloadicon/wps_appicon_20240416204119.png" data-destination="http://www.richqueen.cc/?r=zpm5985">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/richqf3/merchant_resource/appdownloadicon/wps_appicon_20240416204119.png" onclick="openPopup(this)">
+        </div>
+
+
+
+
+
+
+
+
+<div class="image-item" data-id="grindlounge" data-image="https://images.11029984.com/wsd-images-prod/glcasinof3/merchant_resource/appdownloadicon/wps_512_20240502214800.png" data-destination="https://www.grindloungecasino.club/m/member/home">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/glcasinof3/merchant_resource/appdownloadicon/wps_512_20240502214800.png" onclick="openPopup(this)">
+        </div>
+
+
+
+<div class="image-item" data-id="diwata" data-image="https://images.11029984.com/wsd-images-prod/tereaf3/merchant_resource/appdownloadicon/wps_Diwata_LOGO_001_500_20240417105354.png" data-destination="http://www.diwataplay.com/?r=kwp3692">
+ <img class="visible" src="https://images.11029984.com/wsd-images-prod/tereaf3/merchant_resource/appdownloadicon/wps_Diwata_LOGO_001_500_20240417105354.png" onclick="openPopup(this)">
+        </div>
+
+<div class="image-item" data-id="win999" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="http://win999.126phcash.com/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div>
+
+ <div class="image-item" data-id="wk7771" data-image="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg" data-destination="https://www.wk7771.com/register?r=fkq4354"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="agg777" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" data-destination="https://m.agg779.win/?f=457745"> <img class="visible"  src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WH171-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="jilino1" data-image="https://download.ocms.cloud/v2/jln/Picture.3?version=3" data-destination="https://www.jilino1.online/?mid=mrtong"> <img class="visible"  src="https://download.ocms.cloud/v2/jln/Picture.3?version=3"  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="swerty99" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp" data-destination="https://www.swerte99.app/?mid=mrtong"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp"  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="milyon88" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" data-destination="https://www.milyon88.games/?mid=mrtong"> <img class="visible"  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png"  onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="234win" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" data-destination="https://m.234win77.com/?a=201067"> <img class="visible"  src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="ezwin" data-image="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png" data-destination="https://www.ezwin.games/m/register?r=bfe9669"> <img class="visible"  src="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png"  onclick="openPopup(this)">         </div>
+ 
+ <div class="image-item" data-id="ayala2024" data-image="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png" data-destination="https://www.ayala2024.vip/register?r=nvk9258"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="31phmaya" data-image="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png" data-destination="https://www.31phmaya.com/register?r=brp8163"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="wagi777" data-image="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png" data-destination="https://www.wagi777.online/register?r=mnd3398"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="win888" data-image="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png" data-destination="https://www.win888.pub/?r=plh2453"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="kuyaplay" data-image="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" data-destination="https://www.kuyaplay168.com/m/register?r=uas4558"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" onclick="openPopup(this)">         </div> 
+		
+  <div class="image-item" data-id="int" data-image="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" data-destination="http://zahnh.int.games/?referralCode=gcu4208"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" onclick="openPopup(this)">         </div> 
+  
+   <div class="image-item" data-id="phcity" data-image="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" data-destination="http://www.phcityvip.cc/?r=hwl0399"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" onclick="openPopup(this)">         </div> 
+  <div class="image-item" data-id="okebet" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" data-destination="https://www.oke888.co/?referral=gg02442"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" onclick="openPopup(this)">         </div> 
+    
+    
+
+
+ <div class="image-item" data-id="8k8" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" data-destination="https://m.8k8app11.com/?f=1743524"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" onclick="openPopup(this)">         </div> 
+	 
+<div class="image-item" data-id="spinsbet" data-image="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" data-destination="https://spinsbet.live/?invite=pilini"> <img class="visible"  src="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="phhalik" data-image="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" data-destination="http://www.11phhalik.com/?referralCode=uqw9943"> <img class="visible"  src="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="plusph" data-image="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" data-destination="http://www.89plusph.vip/?r=yec8148"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="agilaclub" data-image="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" data-destination="http://www.agilaclub.live/?r=ynk7539"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" onclick="openPopup(this)">         </div> 
+
+<div class="image-item" data-id="aceph" data-image="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" data-destination="http://www.91aceph.club/?r=xhu9046"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" onclick="openPopup(this)">         </div>  
+
+
+ <div class="image-item" data-id="ff777" data-image="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" data-destination="http://www.ff777.ph/?r=wmm8712"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" onclick="openPopup(this)">         </div> 
+
+  <div class="image-item" data-id="phcash" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="'http://win999.96phcash.club/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div> 
+				
+ <div class="image-item" data-id="lodislot" data-image="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" data-destination="http://hytj333.lodislot365.com/?referralCode=pey0284"> <img class="visible"  src="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" onclick="openPopup(this)">         </div> 
+                     
+
+ <div class="image-item" data-id="jilijackpot" data-image="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" data-destination="http://www.jilijackpots.com/?r=auv9280"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" onclick="openPopup(this)">         </div> 
+        
+      
+ <div class="image-item" data-id="me777" data-image="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" data-destination="https://www.me777.xyz/register?r=kep6590"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+<div class="image-item" data-id="bouncingball" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" data-destination="https://www.bouncingball.app?mid=%2FytnZi7eBjZ5tj48HlfPUQ%3D%3D"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+			  </div>  </div>
+		
+
+<div class="popup-container" id="popup-container">
+   
+    <!-- Popup content will be injected dynamically -->
+
+ 
+<h4>Time:  
+<script type="text/javascript">
+<!--
+var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+
+if (minutes < 10){
+minutes = "0" + minutes
+}
+document.write(hours + ":" + minutes + " ")
+if(hours > 11){
+document.write("PM"+ "-DATE" + ":")
+} else {
+document.write("AM" + "-DATE" + ":")
+
+}
+
+var month = currentTime.getMonth() + 1
+var day = currentTime.getDate()
+var year = currentTime.getFullYear()
+document.write(month + "/" + day + "/" + year)
+//-->
+</script>
+</h4>
+
+
+<div class="slider-container">
+  <img class="slide-image" src="image1.jpg" alt="image-slider" width="300" height="250" title="image-slider">
 </div>
 
-    <p>Test permissions:</p>
-	
-	
-    <div class="columns">
-        <ul>
-            <li><a href="javascript:;" onclick="return eze.requestLocation(this);">Request Location</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return eze.requestVideo(this);">Request Video</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return eze.requestAudio(this);">Request Audio</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return eze.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return eze.testClipboard(this);" id="clipboard_test">Read from clipboard</a> <span></span></li>
-        </ul>
-        <ul>
-            <li><a href="javascript:;" onclick="return eze.requestWriteAccess(this);">Request write access</a> <span></span></li>
-            <li><a href="javascript:;" onclick="return eze.requestPhoneNumber(this);">Request phone number</a> <span></span><br><br></li>
-            <li><a href="javascript:;" onclick="return eze.requestServerTime(this);">Request server time</a> (invokes custom method) <span></span></li>
-        </ul>
-    </div>
-	
-	
-	
-	 <p>Test alerts:</p>
-    <div class="columns">
-        <ul>
-            <li><a href="javascript:;" onclick="alert('Hello!');">alert</a></li>
-            <li><a href="javascript:;" onclick="confirm('Are you sure?');">confirm</a></li>
-            <li><a href="javascript:;" onclick="prompt('How old are you?');">prompt</a></li>
-        </ul>
-        <ul>
-            <li><a href="javascript:;" onclick="eze.showAlert('Hello!');">showAlert</a></li>
-            <li><a href="javascript:;" onclick="eze.showConfirm('Are you sure?');">showConfirm</a></li>
-            <li><a href="javascript:;" onclick="eze.requestWriteAccess();">requestWriteAccess</a></li>
-            <li><a href="javascript:;" onclick="eze.requestContact();">requestContact</a></li>
-            <li><a href="javascript:;" onclick="eze.showPopup();">showPopup</a></li>
-            <li><a href="javascript:;" onclick="eze.showScanQrPopup();">showScanQrPopup</a></li>
-            <li><a href="javascript:;" onclick="eze.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
-        </ul>
-    </div>
 
 
-    <p>Test alerts:</p>
-    <div class="columns">
-        <ul>
-            <li><a href="javascript:;" onclick="alert('Hello!');">alert</a></li>
-            <li><a href="javascript:;" onclick="confirm('Are you sure?');">confirm</a></li>
-            <li><a href="javascript:;" onclick="prompt('How old are you?');">prompt</a></li>
-        </ul>
-        <ul>
-            <li><a href="javascript:;" onclick="eze.showAlert('Hello!');">showAlert</a></li>
-            <li><a href="javascript:;" onclick="eze.showConfirm('Are you sure?');">showConfirm</a></li>
-            <li><a href="javascript:;" onclick="eze.requestWriteAccess();">requestWriteAccess</a></li>
-            <li><a href="javascript:;" onclick="eze.requestContact();">requestContact</a></li>
-            <li><a href="javascript:;" onclick="eze.showPopup();">showPopup</a></li>
-            <li><a href="javascript:;" onclick="eze.showScanQrPopup();">showScanQrPopup</a></li>
-            <li><a href="javascript:;" onclick="eze.showScanQrPopup(true);">showScanQrPopup (links only)</a></li>
-        </ul>
-    </div>
 
-    <p>Haptics:</p>
-    <ul>
-        <li>Impact: <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('heavy');">heavy</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('light');">light</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('medium');">medium</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('rigid');">rigid</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred('soft');">soft</a><br><br></li>
-        <li>Notification: <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('error');">error</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('success');">success</a>, &nbsp; <a href="javascript:Telegram.WebApp.HapticFeedback.notificationOccurred('warning');">warning</a><br><br></li>
-        <li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
-    </ul>
 
-    <p>Cloud storage:</p>
-    <form onsubmit="eze.saveCloudForm(this, event);">
-        <table class="table table-bordered small">
-            <thead>
-            <tr>
-                <th width="20%">Key</th>
-                <th width="70%">Value</th>
-                <th width="10%"></th>
-            </tr>
-            </thead>
-            <tbody id="cloud_rows"></tbody>
-            <tfoot>
-            <tr>
-                <td><input type="text" name="key" /></td>
-                <td><input type="text" name="value" /></td>
-                <td>
-                    <button type="submit">Save</button>
-                    <button type="reset">Clear</button>
-                </td>
-            </tr>
-            </tfoot>
-        </table>
-    </form>
 
-    <p>Biometrics:</p>
-    <div class="columns">
-        <ul>
-            <li>isInited: <span class="txt" id="bm_inited">false</span></li>
-            <li>available: <span class="txt" id="bm_available">false</span></li>
-            <li>type: <span class="txt" id="bm_type"></span></li>
-            <li>access_requested: <span class="txt" id="bm_access_requested">false</span> (<a href="javascript:;" onclick="return eze.biometricRequestAccess(this);">Request access</a>) <span></span></li>
-            <li>access_granted: <span class="txt" id="bm_access_granted">false</span> <span id="bm_settings" style="display:none;">(<a href="javascript:;" onclick="return eze.biometricOpenSettings(this);">Open settings</a>)</span></li>
-            <li>token_saved: <span class="txt" id="bm_token_saved">false</span> (<a href="javascript:;" onclick="return eze.biometricSetToken(this);">Set token</a>, <a href="javascript:;" onclick="return eze.biometricRemoveToken(this);">Remove token</a>) <span></span></li>
-            <li>device_id: <span class="txt" id="bm_device_id"></span></li>
-            <li><a href="javascript:;" onclick="return eze.biometricRequestAuth(this);">Request auth</a> <span></span></li>
-        </ul>
-    </div>
-	
-	
-	 <h1>Casinodirector Web App</h1>
-    <p><strong>Description:</strong> casinodirector</p>
-    <p><strong>Direct Link:</strong> <a href="https://t.me/casinodirecBot/eze" target="_blank">https://t.me/casinodirecBot/eze</a></p>
-    <p><strong>User:</strong> mr tong (<em>mrtong26</em>)</p>
+
+	<div class="container-image-grid">
+    <div class="image-grid">
+    	
+<div class="image-item" data-id="win999" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="http://win999.126phcash.com/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div>
+
+ <div class="image-item" data-id="wk7771" data-image="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg" data-destination="https://www.wk7771.com/register?r=fkq4354"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wk777tlbf3/merchant_resource/appdownloadicon/wps_WK777-512_appicon_20240303173627.jpg"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="jilino1" data-image="https://download.ocms.cloud/v2/jln/Picture.3?version=3" data-destination="https://www.jilino1.online/?mid=mrtong"> <img class="visible"  src="https://download.ocms.cloud/v2/jln/Picture.3?version=3" onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="swerte99" data-image="" data-destination="https://www.swerte99.app/?mid=mrtong"> <img class="visible"  src=""  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="milyon88" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp" data-destination="https://www.milyon88.games/?mid=mrtong"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc83lXmX55_B1YZQTldbUWihv5pbW4Jr2GA&amp;usqp"  onclick="openPopup(this)">         </div>
+ <div class="image-item" data-id="234win" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png" data-destination="#"> <img class="visible"  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWNM28vYXUmyiMy4H6fCcyj_Y39uweEh-gyCOilX9gme0SCGxrm2tAi33saEDAC21XW_jXk883bZ7BgiYOwT_X5d66dsHEvnpc2SfqEyl_hwHyLs3MVxI18jz9jmt7wQivkg2ulrwOjoRGVqu4eDlUH3WTj-4a1fDKrByqg6fPJ0IdeveHh7pBo8sRVk/s200/milyon88-.png"  onclick="openPopup(this)">         </div>
+        
+<div class="image-item" data-id="ezwin" data-image="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" data-destination=""> <img class="visible"  src="https://gwfd.qatgwawm.net/system-requirement/Web.Mobile/WK693-01.Mobile/Content/Views/Shared/images/logo.png" onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="ayala2024" data-image="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png" data-destination="https://www.ayala2024.vip/register?r=nvk9258"> <img class="visible"  src="https://images.b332411.com:42666/wsd-images-prod/ezwinf2/merchant_resource/appdownloadicon/wps_icon2_20230827012006.png"  onclick="openPopup(this)">         </div>
+ 
+ <div class="image-item" data-id="ayala2024" data-image="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png" data-destination="https://www.ayala2024.vip/register?r=nvk9258"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/ayalaf3/merchant_resource/appdownloadicon/wps_512_x_512_Ayalawin_Option_1_-_App_Icon_20240214220045.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="31phmaya" data-image="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png" data-destination="https://www.31phmaya.com/register?r=brp8163"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phmayaf3/merchant_resource/appdownloadicon/wps_152_20240317143741.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="wagi777" data-image="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png" data-destination="https://www.wagi777.online/register?r=mnd3398"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/wagif3/merchant_resource/appdownloadicon/wps_icon_20240207170246.png"  onclick="openPopup(this)">         </div>
+        
+ <div class="image-item" data-id="win888" data-image="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png" data-destination="https://www.win888.pub/?r=plh2453"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/win88f3/merchant_resource/appdownloadicon/wps_123132_20240404204030.png"  onclick="openPopup(this)">         </div>
+  <div class="image-item" data-id="kuyaplay" data-image="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" data-destination="www.kuyaplay168.com/?r=uas4558"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/kuyaplayf3/merchant_resource/appdownloadicon/wps_App_Icon_512x512_20240202171744.png" onclick="openPopup(this)">         </div> 
+		
+  <div class="image-item" data-id="int" data-image="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" data-destination="http://zahnh.int.games/?referralCode=gcu4208"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/akowin/merchant_resource/appdownloadicon/wps_icon-512_20230928203823.png" onclick="openPopup(this)">         </div> 
+  
+   <div class="image-item" data-id="phcity" data-image="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" data-destination="http://www.phcityvip.cc/?r=hwl0399"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/phcityf3/merchant_resource/appdownloadicon/app_download_icon_phcityf3_20240606192432.png" onclick="openPopup(this)">         </div> 
+  <div class="image-item" data-id="okebet" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" data-destination="https://www.oke888.co/?referral=gg02442"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQQuqPWq5Gd5a2HGH2vE8qxvPw9qOEis8Kxg" onclick="openPopup(this)">         </div> 
     
-    <h2>Action</h2>
-    <button class="button" onclick="sendMessage()">Send Message</button>
+    
 
 
-    <pre><code id="webview_data"></code></pre>
-    <div class="hint">
-        Data passed to webview.
-        <span id="webview_data_status" class="status_need">Checking hash...</span>
-    </div>
-    <pre><code id="theme_data"></code></pre>
-    <div class="hint">
-        Theme params
-    </div>
-    <div class="hint">
-        Version: <span id="ver"></span>,
-        platform: <span id="platform"></span>
-    </div>
+ <div class="image-item" data-id="8k8" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" data-destination="https://m.8k8app11.com/?f=1743524"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIObWvl0O_1oas0PYp0HHRYVhJsD57B5f-Tw&amp;usqp=CAU" onclick="openPopup(this)">         </div> 
+	 
+<div class="image-item" data-id="spinsbet" data-image="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" data-destination="https://spinsbet.live/?invite=pilini"> <img class="visible"  src="https://cms-ph.imgix.net/live/image/logo/20240115-142522_aT1x240115062555.png?auto=format,compress&amp;q=60&amp;blur=0&amp;w=&amp;h=40" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="phhalik" data-image="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" data-destination="http://www.11phhalik.com/?referralCode=uqw9943"> <img class="visible"  src="https://images.1248593.com/wsd-images-prod/phhalikf4/merchant_resource/appdownloadicon/app_download_icon_phhalikf4_20240521154038.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="plusph" data-image="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" data-destination="http://www.89plusph.vip/?r=yec8148"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet41f3/merchant_resource/appdownloadicon/wps_bet41f3_app_20240506171711.png" onclick="openPopup(this)">         </div> 
+
+
+<div class="image-item" data-id="agilaclub" data-image="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" data-destination="http://www.agilaclub.live/?r=ynk7539"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/agilaf3/merchant_resource/appdownloadicon/wps_appicon_512_x_512__20240404181243.png" onclick="openPopup(this)">         </div> 
+
+<div class="image-item" data-id="aceph" data-image="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" data-destination="http://www.91aceph.club/?r=xhu9046"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/bet36f3/merchant_resource/appdownloadicon/wps_bet36f3_app_20240223141547.png" onclick="openPopup(this)">         </div>  
+
+
+ <div class="image-item" data-id="ff777" data-image="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" data-destination="http://www.ff777.ph/?r=wmm8712"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/668betphf3/merchant_resource/appdownloadicon/wps_logo-512x512_20240322212620.png" onclick="openPopup(this)">         </div> 
+
+  <div class="image-item" data-id="phcash" data-image="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" data-destination="'http://win999.96phcash.club/?referralCode=ksa5586"> <img class="visible"  src="https://images.3138722.com/wsd-images-prod/bet31f2/merchant_resource/appdownloadicon/wps_bet31f2_app_20231219143408.png" onclick="openPopup(this)">         </div> 
+				
+            <div class="image-item" data-id="lodislot" data-image="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" data-destination="http://hytj333.lodislot365.com/?referralCode=pey0284"> <img class="visible"  src="https://images.6929183.com/wps-prod-upload/merchant_resource/lodibet/wps_APP%20icon_20220726193233.jpeg" onclick="openPopup(this)">         </div> 
+                     
+
+					 <div class="image-item" data-id="jilijackpot" data-image="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" data-destination="http://www.jilijackpots.com/?r=auv9280"> <img class="visible"  src="https://images.6929183.com/wsd-images-prod/jili999/merchant_resource/appdownloadicon/wps_APP_ICON_(2)_20230110165039.jpeg" onclick="openPopup(this)">         </div> 
+        
+      
+              <div class="image-item" data-id="me777" data-image="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" data-destination="https://www.me777.xyz/register?r=kep6590"> <img class="visible"  src="https://images.11029984.com/wsd-images-prod/me777f3/fe_setting/h5_logo/wps_me777logoGIF-F2_20240621162647.gif" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+<div class="image-item" data-id="bouncingball" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" data-destination="https://www.bouncingball.app?mid=%2FytnZi7eBjZ5tj48HlfPUQ%3D%3D"> <img class="visible"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxOj5Vy8k9gSMTbQYV7GSQRLj98mZ4UbH8Pg&s" onclick="openPopup(this)">         </div> 
+			  
+			  
+			  
+			  
+			  </div>  </div>
+	
+	
+	
+	
+
+<div class="popup-container" id="popup-container">
+   
+    <!-- Popup content will be injected dynamically -->
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+	
+function openPopup(img) {
+    const item = img.parentElement;
+    const popupId = item.getAttribute('data-id');
+    const image = item.getAttribute('data-image');
+    const destination = item.getAttribute('data-destination');
+
+    const popupContent = `
+        <div class="popup" id="${popupId}">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('${popupId}')">X</span>
+                <h2>Ayaw Kalimot Og cashout</h2>
+                <img class="featured-item" src="${image}">
+                <button onclick="window.open('${destination}')">Scater Na</button>
+            </div>
+        </div>
+    `;
+
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.innerHTML = popupContent;
+    popupContainer.style.display = 'flex'; // Show popup
+}
+
+function closePopup(popupId) {
+    const popupContainer = document.getElementById('popup-container');
+    popupContainer.style.display = 'none'; // Hide popup
+    popupContainer.innerHTML = ''; // Clear the content
+}
+
+</script>
+
 </section>
-
 <div class="viewport-border"></div>
 <div class="viewport-stable_border"></div>
 
